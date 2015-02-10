@@ -1,0 +1,56 @@
+﻿    
+<html>
+<head>
+<style>
+h1,h2   {color: #8f24b2;
+
+}
+/* p    {color: #a329cc;
+        font-weight:bold;
+        font-size:20px;
+  }*/ 
+body {
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat:no-repeat;
+}
+.center {
+    text-align: justify;
+    color: #cc33ff;
+}
+div {
+    /* background-color: #f5d6ff; */
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+}
+img:hover {
+    opacity: 0.4;
+    padding:10px;
+
+}
+
+@media screen {
+    p {
+        font-family: verdana,sans-serif;
+        font-size: 14px;
+         font-weight:bold;
+        font-size:20px;
+        color:#7a1f99;
+    }
+}
+
+@media print {
+    p {
+        font-size: 20px;
+        color: red;
+         font-weight:bold;
+        font-size:20px;
+    }
+</style>
+</head>
+<body>
+
+</body>
+</html>

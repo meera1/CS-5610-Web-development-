@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+        h1
+         {
+            text-align:center;
+        }
+        body {
+        background-color:#cccc00;
+        }
+
+        .p2 {
+            font-size:20px;
+        }
+    </style>
+    <title> Experiment 8</title>
+
+    <script type="text/javascript">
+
+        function factorial1(txt)
+        {
+            var n = parseInt(txt);
+            if (n < 0)
+            {
+                alert("Factroial not possible of a negative number");
+            }
+            else if (n == 0 || n == 1) {
+                var n = 1;
+                document.getElementById('demo').innerHTML = n;
+            }
+            else
+            {
+                var i = 1;
+                var fact = 1;
+                for (i = 1; i <= n; i++)
+                {
+                    fact *= i;
+                }
+                document.getElementById('demo').innerHTML = fact;
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Experiment 9</h1>
+    <h2> JAVASCRIPT LOOPS</h2>
+    <input type="text" id="fact_name" name="userInput">
+    <input type="button" id="btn1" name="btn1" value="FACTORIAL" onclick="factorial1(document.getElementById('fact_name').value)">
+    <p class="p2">The factorial is: <b id="demo"> </b></p>
+
+
+    <hr>
+
+    <h2>
+
+        Documentation
+    </h2><pre>
+<p class="p2">
+                 
+In this experiment, I used java script to display the 
+factorial of a number by using for loop and if loops 
+    </p>
+ </pre>
+    <br>
+    <hr/>
+    <h2>Syntax</h2>
+    <code class="p2"><pre>
+if-else Statement:
+if (condition) {
+    block of code to be executed if the condition is true
+} else { 
+    block of code to be executed if the condition is false
+}
+for-loop:
+
+for (statement 1; statement 2; statement 3) {
+    code block to be executed
+}
+</pre>
+    
+        </code>
+
+    <hr />
+    <h2> Code Sinppet</h2>
+    <code class="p2">
+<pre>
+          function factorial1(txt)
+        {
+            var n = parseInt(txt);
+            if (n < 0)
+            {
+                alert("Factroial not possible of a negative number");
+            }
+            else if (n == 0 || n == 1) {
+                var n = 1;
+                document.getElementById('demo').innerHTML = n;
+            }
+            else
+            {
+                var i = 1;
+                var fact = 1;
+                for (i = 1; i <= n; i++)
+                {
+                    fact *= i;
+                }
+                document.getElementById('demo').innerHTML = fact;
+            }
+        }
+        </pre>
+    </code>
+    <hr>
+
+    <h2>Source Code</h2>
+    <a href="../../fileview/Default.aspx?~/experiments/javascript/loops.html" target="_blank">View Source</a>
+    <hr />
+    <h2>References Links</h2>
+    <a href="http://www.w3schools.com/" target="_blank">W3Schools</a> <br />
+    <hr />
+
+</body>
+</html>

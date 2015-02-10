@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        #div1 {
+           
+            position:absolute;
+            left:0px;
+            width: 330px;
+            height: 250px;
+            margin: 100px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+         #div2 {
+           
+            position:absolute;
+            right:0px;
+            width: 330px;
+            height: 250px;
+            margin: 100px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+        p {
+            font-size:20px;
+        }
+        body {
+            background-color:silver;
+        }
+
+        h1 {
+            font-family:'Lucida Calligraphy'; 
+            text-align:center;
+        }
+    </style>
+    <script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+    </script>
+</head>
+<body>
+    <h1> EXPERIMENT 1</h1>
+    <br/><br/>
+    <p align="center"> Drag image from one rectangle to another and back</p>
+    
+
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="1.jpg" draggable="true" ondragstart="drag(event)" id="drag1" width="304" height="228">
+    </div>
+
+    <div id="div2"  ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+
+    <br/> <br/> <br/>
+    <hr style="margin-top:400px">
+    
+        <h2>
+
+            Documentation
+        </h2>
+        <p> In this experiment I wanted to make elements draggable. I used images for this, setting its draggable attribute to true </p>
+        <code>
+            <pre> "img draggable="true" </pre>
+        </code>
+        <br>
+        <p> Then in the script tag, I defined function for the drag drop events</p>
+        <code>
+            <pre> 
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+        </pre>
+        </code>
+    
+    <hr>
+
+    <h2>Source Code</h2>
+    <a href="../../fileview/Default.aspx?~/experiments/html/drag.html" target="_blank">View Source</a>
+
+    <hr />
+    <h2>References Links</h2>
+    <a href="http://www.w3schools.com/" target="_blank">W3Schools</a> <br/>
+    <hr />
+
+
+
+</body>
+</html>

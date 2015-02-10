@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+        h1 {
+        text-align:center;
+        }
+        #test {
+            font-weight:bold;
+        }
+
+        .p1 {
+             font-size:20px;
+        }
+        body {
+        background-color:#cccc00;
+        }
+
+        .p2 {
+            font-size:20px;
+        }
+
+        </style>
+    <title> Experiment 9</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+        </script>
+    <script>
+        $(document).ready(function () {
+            $("#hide").click(function () {
+                $("p.p1").hide();
+                $("#test").hide();
+            });
+            $("#show").click(function () {
+                $("p.p1").show();
+                $("#test").show();
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Experiment 9</h1>
+    <h2 id="test">Experiment for learning jquery</h2>
+    <p class="p1">Click the button below n see me disappear and then appear again</p>
+    <button id="hide" class="p2">Hide me</button>
+    <button class="p2" id="show">Show me</button>
+
+
+
+    <div>
+        <hr>
+
+        <h2>
+
+            Documentation
+        </h2>
+        <pre>      
+        <p class="p2">        In this experiment I wanted to use jquery. Basic selectors, for centain 
+            elements as well as elements having certain class or id's </p></pre>
+        <br>
+        <hr>
+        <h2> Syntax</h2>
+        <pre>
+<p class="p2">
+        Basic syntax is: 
+             $(selector).action()
+
+        A $ sign to define/access jQuery
+        A (selector) to "query (or find)" HTML elements
+        A jQuery action() to be performed on the element(s)
+    </p>
+       </pre>
+        <h2> Code Sinppet</h2>
+        <code class="p2">
+<pre>
+ 
+    &lt;script&gt;
+    $(document).ready(function () {
+        $("button").click(function () {
+            $("p").hide();
+            $("#test").hide();
+        });
+    });
+    &lt;/script&gt;
+        </pre>
+        </code>
+        <hr>
+
+        <h2>Source Code</h2>
+        <a href="../../fileview/Default.aspx?~/experiments/jquery/jquery1.html" target="_blank">View Source</a>
+        <hr />
+        <h2>References Links</h2>
+        <a href="http://www.w3schools.com/" target="_blank">W3Schools</a> <br />
+        <hr />
+
+
+
+    </div>
+
+</body>
+</html>

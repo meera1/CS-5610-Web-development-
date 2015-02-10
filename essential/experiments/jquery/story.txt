@@ -1,0 +1,5 @@
+﻿../../story/whatisnext.htm?../experiments/jquery/story.txt		       What is Next?
+jquery1.html            Basic Syntax
+jquery2.html            Slide, Toggle and Animation
+
+

@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+        a {
+            font-weight:bold;
+            color:#ff80b2;
+            font-size:30px;
+        }
+        #div1{
+            text-align:center;
+           
+        }
+        #div2 {
+            padding-top: 30px;
+            padding-bottom:50px;
+        }
+        #div3{
+            padding:30px;
+        }
+
+
+        .clear {
+                clear: left;
+            }
+
+            .container {
+                width: 300px;
+                padding: 10px;
+                border: 1px solid;
+            }
+
+            .left {
+                float: left;
+                width: 120px;
+                padding: 10px;
+                border: 1px solid;
+                text-align: center;
+            }
+
+        .span1 {
+            font-size:25px;
+            font-weight:bold;
+        }
+        body{
+            background-color:#cce0ff;
+        }
+
+        
+        .header {
+            border: 1px solid;  
+            text-align: left;
+            width: 400px;
+            float: left;
+           }
+
+          .menu {
+           border: 1px solid;  
+           text-align: center;
+           width: 150px;
+           float: left;
+           clear: left;
+}
+        #hr {
+            margin-top:200px;
+
+        }
+        .content {
+               border: 1px solid;  
+               text-align: left;
+               width: 250px;
+               float: left;
+               }
+
+        </style>
+
+    <title> EXPERIMENT 2</title>
+</head>
+<body>
+    <h1 style="font-family:'Lucida Calligraphy'; text-align:center"> EXPERIMENT 5</h1> 
+    <div id="div1">
+    <nav>
+        <a href="../../fileview/Default.aspx?~/experiments/html/frames_main.html">HTML</a> |
+        <a href="../../fileview/Default.aspx?~/experiments/css/css_main.html">CSS</a> |
+    </nav>
+        </div>
+
+
+        <form>
+            <span class="span1">First name: <span><input type="text" name="FirstName" placeholder="Meera"><br>
+            <span class="span1">Last name: <span><input type="text" name="LastName" placeholder="Udani" ><br>
+            <div id="div2">
+            <span class="span1"> Your Favourite Harry Potter Actor: </span><input list="HP" name="browser">
+            <datalist id="HP">
+                <option value="Daniel Radcliffe">
+                <option value="Emma Watson">
+                <option value="Rupert Grint">
+            </datalist>
+            <input type="submit">
+                </div>
+        </form>
+
+   
+        <div id="div2">
+        <h3> This is an example of a container inside a container </h3>
+        <div id="div3" class="container">
+            <div id="div3" class="clear" ></div>
+
+            <div  class="left">
+                1
+            </div>
+
+            <div  class="left">
+                2
+            </div>
+            <div id="div3" class="clear"></div>
+        </div>
+        </div>
+
+       <h3>This is an example showing how to position two containers side by side with a top container above over the full length.</h3>
+
+    <div class="header">
+        Header
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="menu">
+        Menu 1<br />
+        Menu 2<br />
+        Menu 3
+    </div>
+
+    <div class="content">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam commodo,
+        magna vitae egestas sodales, massa purus auctor diam, sed mattis turpis
+        ac arcu. Phasellus sed neque. Nulla facilisi. Maecenas mollis scelerisque nisi.
+    </div>
+ 
+    <br/>
+    <br/>
+    <br />
+    <br />
+    <br />
+    <br />
+
+
+    <hr id="hr">
+    <h3>
+
+        Documentation
+    </h3>
+    <p> In this experiment, I have used the 'nav' tag for creating a navigation bar.
+ </p>
+
+    <br>
+   
+
+    <h3> Code Sinppet</h3>
+
+<pre>
+<code>
+&lt;nav&gt;
+    &lt;a href="../../fileview/Default.aspx?~/experiments/html/frames_main.html"&gt;HTML&lt;/a&gt; |
+    &lt;a href="../../fileview/Default.aspx?~/experiments/css/css_main.html"&gt;CSS&lt;/a&gt; |
+&lt;/nav&gt;
+</code>
+</pre>
+
+   
+  <hr /> 
+
+    </h3>
+    <p>
+        Then I used the 'placeholder' attribute for the 'input' tags
+    </p>
+
+    <br>
+
+
+    <h3> Code Sinppet</h3>
+
+<pre>
+<code>
+    &lt;span class="span1"&gt;First name: &lt;span&gt;&lt;input type="text" name="FirstName" placeholder="Meera"&gt;&lt;br&gt;
+</code>
+</pre>
+    
+  
+
+    <hr id="hr">
+    <h4>
+        I have used containers on the div tags belonging to classes having the float attribute.
+
+    </h4>
+
+    <br>
+
+
+    <h3> Code Sinppet</h3>
+
+<pre>
+<code>
+       .container {
+                width: 300px;
+                padding: 10px;
+                border: 1px solid;
+            }
+            .left {
+                float: left;
+                width: 120px;
+                padding: 10px;
+                border: 1px solid;
+                text-align: center;
+            }
+</code>
+</pre>
+   
+
+
+    <hr />
+
+    <h3>Source Code</h3>
+    <a href="../../fileview/Default.aspx?~/experiments/responsive/responsive2.html" target="_blank">View Source</a>
+
+    <hr />
+    <h3>References Links</h3>
+    <a href="http://www.w3schools.com/" target="_blank">W3Schools</a> <br />
+    <hr />
+
+
+</body>
+</html>

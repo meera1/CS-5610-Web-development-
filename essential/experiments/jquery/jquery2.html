@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        #test {
+            font-weight: bold;
+        }
+
+        .p1 {
+            font-size: 20px;
+        }
+
+        body {
+            background-color: #cccc00;
+        }
+
+        .p2 {
+            font-size: 20px;
+            position:;
+        }
+    </style>
+
+    <title> Experiment 10</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#flip").click(function () {
+                $("#panel").slideToggle("slow");
+            });
+            $("button").click(function () {
+                $("#div1").animate({
+                    left: '250px',
+                    opacity: '0.5',
+                   
+                });
+            });
+        });
+    </script>
+    <style>
+        #panel {
+            display:none;
+        }
+    </style>
+  
+</head>
+<body>
+    <h1>Experiment 10</h1>
+
+    <div id="flip" class="p2">Click to slide down panel</div>
+    <div id="panel"><img src="44.jpg" style="width:420px;height:420px;border:0"></div>
+    </br>
+    <button class="p2">Start</button>
+
+    <div id="div1" style="position:absolute;"><img src="11.jpg" style="width:200px;height:200px;border:0"></div>
+
+   
+    </br></br>
+    </br></br>
+    </br></br>
+    </br></br>
+    </br></br>
+    </br></br>
+    <div>
+
+        <hr>
+        <h2>
+
+            Documentation
+        </h2>
+        <pre>      
+        <p class="p2">  In this experiment I wanted to use jquery events like slide and toggle and animation  </p></pre>
+        <br>
+        <hr>
+        <h2> Code Sinppet</h2>
+        <code class="p2">
+<pre>
+ 
+    &lt;script&gt;
+        $(document).ready(function () {
+            $("#flip").click(function () {
+                $("#panel").slideToggle("slow");
+            });
+            $("button").click(function () {
+                $("#div1").animate({
+                    left: '250px',
+                    opacity: '0.5',
+                   
+                });
+            });
+        });
+    &lt;/script&gt;
+        </pre>
+        </code>
+        <hr>
+
+        <h2>Source Code</h2>
+        <a class="p2" href="../../fileview/Default.aspx?~/experiments/jquery/jquery2.html" target="_blank">View Source</a>
+        <hr />
+        <h2>References Links</h2>
+        <a class="p2" href="http://www.w3schools.com/" target="_blank">W3Schools</a> <br/>
+        <hr />
+
+
+
+    </div>
+
+
+</body>
+</html>

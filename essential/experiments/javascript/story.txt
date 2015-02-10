@@ -1,0 +1,6 @@
+﻿../../story/whatisnext.htm?../experiments/javascript/story.txt		       What is Next?
+date.html                     Date Function
+string.html                   String Function
+loops.html                    if-else and for loops
+
+
