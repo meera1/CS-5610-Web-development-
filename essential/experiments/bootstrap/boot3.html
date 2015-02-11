@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <title></title>
+
+    <title>Experiment 13</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./js/bootstrap.js"></script>
+    <style>
+        body {
+            background-color:#f0ffd1;
+        }
+        h1{
+            text-align:center;
+        }
+        </style>
+</head>
+<body>
+    <h1>Experiment 13: Modals</h1>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
+        Know more about HP
+    </button>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">
+       Now answer this
+    </button>
+
+    <!-- Modal 1-->
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">HP</h4>
+                </div>
+                <div class="modal-body">
+                    <pre>
+There once was a boy named Harry 
+Who was destined to be a star 
+His parents were killed by Voldemort 
+Who gave him a lightning scar 
+Yo harry, you're a wizard 
+(Philosopher's Stone) 
+Harry goes to Hogwarts 
+and meets Ron and Hermione 
+Mcgonagall requires he play for gryffindor 
+Draco is a daddy's boy 
+Quirrell becomes un-employed 
+The Sorcerer's stone is destroyed by Dumbledore 
+(Chamber of secrets) 
+Ron breaks his wand 
+now Ginny's gone 
+and Harry's in mortal danger 
+Tom Riddle hides his snake inside a ginormous secret chamber 
+(Prisoner Of Azkaban) 
+Harry blows up aunt marge 
+the Dementors come and take charge 
+Lupin's a wolf 
+the rats a man 
+and now the prisoner is at large 
+They use time travel so they can 
+save the prisoner of Azkaban 
+who just so happens to be Harry's godfather 
+I don't really get it either.... 
+(Goblet Of Fire) 
+Harry gets put in the tri-wizard tournament 
+with dragons and mermaids 
+...oh no Edward Cullen get's slayed 
+he's back 
+(Order of the phoenix) 
+Harry, Harry it's getting scary 
+Voldemort's back and your a revolutionary, Harry 
+Dumbledore, Dumbledore why is he ignoring your constant attempts to contact him 
+He is forced to leave the school 
+Umbridge arrives 
+Draco's a tool 
+kids break into the ministry 
+sirius black is dead as can be 
+(Half-blood prince) 
+Split your soul 
+seven parts of a whole 
+there horcruxes! 
+It's Dumbledore's end 
+(Deathly Hallows) 
+there once was a boy named Harry 
+who constantly conquered death 
+but in one final duel between good and bad 
+he may take his final breath... 
+
+</pre>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 2 -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Quiz</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Who told harry that he was a wizard?</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputEmail3" placeholder="answer 1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="firstName" class="col-sm-2 control-label">Who was harry's enemy?</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputEmail3" placeholder="answer 2">
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Submit</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2>
+    Documentation
+    </h2><pre>
+<p>
+                 
+In this experiment, I have designed modals.
+        Modals are streamlined, but flexible, dialog prompts with the minimum required functionality and smart defaults.
+    Syntax:
+
+       
+&lt;button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg"&gt;Large modal&lt;/button&gt;
+    &lt;div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"&gt;
+        &lt;div class="modal-dialog modal-lg"&gt;
+        &lt;div class="modal-content"&gt;
+        ...
+        &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+
+    </p>
+ </pre>
+    <br>
+    <hr />
+
+    <hr>
+
+    <h2>Source Code</h2>
+    <a href="../../fileview/Default.aspx?~/experiments/bootstrap/boot3.html" target="_blank">View Source</a>
+    <hr />
+    <h2>References Links</h2>
+
+    <a href="https://www.youtube.com/watch?v=RX7BnPVdNOc" target="_blank">Youtube link for Jose Annuniziato's leture of Bootstrap</a> <br />
+    <a href="http://www.w3schools.com/" target="_blank">W3Schools</a> <br />
+    <a href="http://http://getbootstrap.com/" target="_blank">Bootstrap Official Site</a> <br />
+    
+    <hr />
+
+</body>
+</html>
