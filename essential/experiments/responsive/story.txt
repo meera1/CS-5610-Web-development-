@@ -1,2 +1,3 @@
 ﻿../../story/whatisnext.htm?../experiments/responsive/story.txt		       What is Next?
 responsive1.html								                       Responsive I
+responsive2.html								                       Responsive II

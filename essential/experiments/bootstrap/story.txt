@@ -2,6 +2,7 @@
 boot_intro.html								                           Intorduction to Bootstrap
 boot2.html								                           Thumbnails and Carousels
 boot3.html								                           Modals
+boot4.html                                                         Accordion
 
 
 
