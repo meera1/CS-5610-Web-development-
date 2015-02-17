@@ -5,6 +5,7 @@
 ../story/index.htm?../experiments/jquery/story.txt                            JQuery
 ../story/index.htm?../experiments/responsive/story.txt                        Responsive 
 ../story/index.htm?../experiments/bootstrap/story.txt                         Bootstrap
+../story/index.htm?../experiments/JQueryUI/story.txt                          JQueryUI
 
 
 

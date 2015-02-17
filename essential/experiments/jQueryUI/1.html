@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Experiment 16</title>
+    <link rel="stylesheet" href="./css/jquery-ui.css"> 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <script src="./jquery/jquery.js"></script>
+    <script src="./jquery/jquery-ui.js"></script>
+   
+    <style>
+       h1  {
+           color: black;
+           text-align:center;
+           }
+        .div1 {
+        
+        display: block;
+        margin-left:auto;
+        margin-right:auto;
+        border:double;
+        border-color:blueviolet;
+        justify-content:center;
+
+        }
+         .p1 {
+             background-color: #f5d6ff;
+         font-family: verdana,sans-serif;
+         font-size: 14px;
+         font-weight:bold;
+         font-size:20px;
+         color:#7a1f99;
+    }
+             .p2 {
+             background-color: #f5d6ff;
+         font-family: verdana,sans-serif;
+         font-size: 20px;
+         font-weight:bold;
+         color:black;
+    }
+             .p3 {
+             background-color: white;
+         font-family: verdana,sans-serif;
+         font-size: 20px;
+         font-weight:bold;
+         color:black;
+    }
+             .p4 {
+            
+         font-family: verdana,sans-serif;
+         font-size: 16px;
+         
+       
+    }
+             body{
+                 background-color:lightgray;
+                 margin-left:15px;
+                 margin-right:15px;
+             }
+
+    </style>
+    <script>
+        $(function () {
+            $("#resizable").resizable();
+        })
+        function submit() {
+            alert("Good Job!...Have a nice day!");
+        }
+        </script>
+</head>
+<body>
+    <h1>Experiment 16</h1>
+    <div>
+        <p class="p1">Play the video and answer the questions below </p>
+    </div>
+    
+    
+    <div id="resizable" class="div1" >
+        <iframe width="1000" height="500" src="https://www.youtube.com/embed/07UcGa4vZxI" frameborder="0" allowfullscreen></iframe>
+    </div>
+        <p class="p2">Which country the song describes? </p>  <p class="p3" contenteditable="true"> Answer: </p> 
+        <p class="p2">Which word is repeated most of the times to praise India? </p> <p class="p3" contenteditable="true"> Answer: </p> 
+        <button id="button" class="btn-default btn-block" onclick="submit()" >Done!</button> 
+    
+
+    <hr>
+
+    <h2>
+
+        Documentation
+    </h2><pre>
+<p class="p4">
+                 
+    In this experiment, I have used JQuesryUI. 
+    What is JQuesryUI?
+    jQuery UI is a curated set of user interface interactions, 
+    effects, widgets, and themes built on top of the jQuery JavaScript Library.
+    Whether you're building highly interactive web applications or you just
+    need to add a date picker to a form control, jQuery UI is the perfect choice.
+    
+    I have used the 'resizable' interactions availble. 
+    Apart form this resizable property, I used bootstrap to make my page more spohisticated and a good feel, 
+    I used i-frame to play the video available on youtube.
+    In the java script, I also wrote another function for displaying an alert box on clicking the button.
+
+    Errors:
+    Also I encountered an error "Uncaught TypeError: undefined is not a function"
+    The resone for this error was that I was importing my jquery files in the wrong order
+    The order should have been:
+    jquery.css
+    jquery.js
+    jquery-ui.js
+
+    Another reason I forund that this error occurs is that in the the script functions, 
+    there is a ; missing or quotes, or parenthesis. Well in general syntax error.
+    So the basic syntax should be something like:
+
+    $(funtion (){
+      // use $ code here ending with a ;
+    })
+
+    </p>
+ </pre>
+    <br>
+    <hr />
+    <h2>Code Snippet</h2>
+    
+        <pre class="p4">
+        &lt;script&gt;
+    $(function () {
+        $("#resizable").resizable();
+    })
+    function submit() {
+        alert("Good Job!...Have a nice day!");
+    }
+        &lt;/script&gt;
+
+    </pre>
+    <hr>
+
+    <h2>Source Code</h2>
+    <a class="p4"  href="../../fileview/Default.aspx?~/experiments/JQueryUI/1.html" target="_blank">View Source</a>
+    <hr />
+    <h2>References Links</h2>
+
+    <a class="p4" href="http://youtu.be/eTUstNknCrw" target="_blank">Youtube link for Jose Annuniziato's leture of JQueryUI</a> <br />
+    <a class="p4" href="http://www.w3schools.com/" target="_blank">W3Schools</a> <br />
+    <a class="p4" href="http://jqueryui.com/" target="_blank">JQueryUI Official Site</a> <br />
+
+
+    <hr />
+
+</body>
+</html>
