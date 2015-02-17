@@ -1,5 +1,10 @@
 ﻿../../story/whatisnext.htm?../experiments/JQueryUI/story.txt		       What is Next?
 1.html								                                 Resizable
+2.html                                                               Draggable and Droppable
+3.html															     Form elements with Tooltip
+4.html															     Store data in Local Storage (JSON data converted into string format)
+5.html															     Load the stored data from Local Storage (String data converted back into JSON objects)
+
 
 
 

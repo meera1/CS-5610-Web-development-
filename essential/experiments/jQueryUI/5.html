@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Experiment 19</title>
+    <link rel="stylesheet" href="./css/jquery-ui.css"> 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <script src="./jquery/jquery.js"></script>
+    <script src="./jquery/jquery-ui.js"></script>
+   
+    <style>
+       h1  {
+           color: black;
+           text-align:center;
+           }
+       .p1{
+           background-color:white;
+       }
+             .p4 {
+            
+         font-family: verdana,sans-serif;
+         font-size: 16px;
+             }
+             .div2{
+                 margin-top:300px;
+                 justify-content:space-around;
+             }
+             body{
+                 background-color:lightgray;
+                 margin-left:15px;
+                 margin-right:15px;
+             }
+      
+    </style>
+    <script> 
+        $(function () {
+            $("#save").click(save);
+            $("#load").click(load);
+            
+        });
+
+        function save()
+        {
+            var allP = $("p.p1");
+            //console.log(allP);
+            var paragraphs = [];
+            allP.each(function (index, item) {
+                //console.log(index);
+                //console.log(item);
+                var p1 = $(item);
+                var p2 = p1.text();
+                var pos = p1.position();
+                //console.log(p2);
+                //console.log(pos);
+                var pObj = {
+                    text: p2,
+                    x: pos.left,
+                    y: pos.top
+
+                };
+                paragraphs.push(pObj); // we store all the paragraphs in the array with their text and position in json format
+            });
+            //console.log(paragraphs); // print all paragraphs in JSON format
+            pStr = JSON.stringify(paragraphs);
+            console.log(pStr);  // print all paragraphs in form of a string
+            localStorage.setItem("page", pStr);
+
+        }
+
+        function load()
+        {
+            
+            var page = localStorage.getItem("page");
+            //console.log(page);
+            if (page == null) // when a local storage page is empty, it is a good practice to first check 
+                alert("no data in local storage");
+            page = JSON.parse(page);
+            console.log(page);  // after converting the page into JSON format from string format we print it
+        }
+        
+        
+        
+
+
+        </script>
+</head>
+<body>
+    <h1>Experiment 19</h1>
+    <p class="p1" contenteditable="true">Tell me about yourself:</p>
+    <p class="p1" contenteditable="true" >Your Strengths:</p>
+    <p class="p1" contenteditable="true" >Your Weakness:</p>
+    
+    <button id="save">Save</button>
+    <button id="load">Load</button>
+
+
+    <br>
+    <hr>
+        <h2>    Documentation
+        </h2>
+        <pre>
+        <p class="p4">
+           
+                 
+    In this experiment, I have used JQueryUI. 
+    What is JQuesryUI?
+    jQuery UI is a curated set of user interface interactions, 
+    effects, widgets, and themes built on top of the jQuery JavaScript Library.
+    Whether you're building highly interactive web applications or you just
+    need to add a date picker to a form control, jQuery UI is the perfect choice.
+    
+    I have built this page on the previous one, 4.html.
+    The data that was stored in local storage in the form of a string,
+    is retrieved in the form of JSON objects. This data can be uesd for 
+    several user interactions, and analysis of this data is also very 
+    convenitent as it is available locally.
+   
+        </p>
+        </pre>
+    
+    <br>
+    <hr />
+    <h2>Code Snippet</h2>
+    
+        <pre class="p4">
+        &lt;script&gt;
+        $(function () {
+            $("#save").click(save);
+            $("#load").click(load);
+            
+        });
+        function save()
+        {
+            var allP = $("p.p1");
+            //console.log(allP);
+            var paragraphs = [];
+            allP.each(function (index, item) {
+                //console.log(index);
+                //console.log(item);
+                var p1 = $(item);
+                var p2 = p1.text();
+                var pos = p1.position();
+                //console.log(p2);
+                //console.log(pos);
+                var pObj = {
+                    text: p2,
+                    x: pos.left,
+                    y: pos.top
+                };
+                paragraphs.push(pObj); // we store all the paragraphs in the array with their text and position in json format
+            });
+            //console.log(paragraphs); // print all paragraphs in JSON format
+            pStr = JSON.stringify(paragraphs);
+            console.log(pStr);  // print all paragraphs in form of a string
+            localStorage.setItem("page", pStr);
+        }
+        function load()
+        {
+            
+            var page = localStorage.getItem("page");
+            //console.log(page);
+            if (page == null) // when a local storage page is empty, it is a good practice to first check 
+                alert("no data in local storage");
+            page = JSON.parse(page);
+            console.log(page);  // after converting the page into JSON format from string format we print it
+        }
+        
+        &lt;/script&gt;
+
+    </pre>
+    <hr>
+
+    <h2>Source Code</h2>
+    <a class="p4"  href="../../fileview/Default.aspx?~/experiments/JQueryUI/5.html" target="_blank">View Source</a>
+    <hr />
+    <h2>References Links</h2>
+
+    <a class="p4" href="http://youtu.be/eTUstNknCrw" target="_blank">Youtube link for Jose Annuniziato's leture of JQueryUI</a> <br />
+    <a class="p4" href="http://www.w3schools.com/" target="_blank">W3Schools</a> <br />
+    <a class="p4" href="http://jqueryui.com/" target="_blank">JQueryUI Official Site</a> <br />
+
+
+    <hr />
+
+</body>
+</html>

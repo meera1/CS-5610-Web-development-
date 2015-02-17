@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Experiment 18</title>
+    <link rel="stylesheet" href="./css/jquery-ui.css"> 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <script src="./jquery/jquery.js"></script>
+    <script src="./jquery/jquery-ui.js"></script>
+   
+    <style>
+       h1  {
+           color: black;
+           text-align:center;
+           }
+       
+             .p4 {
+            
+         font-family: verdana,sans-serif;
+         font-size: 16px;
+             }
+             .div2{
+                 margin-top:300px;
+                 justify-content:space-around;
+             }
+             body{
+                 background-color:lightgray;
+                 margin-left:15px;
+                 margin-right:15px;
+             }
+      
+    </style>
+    <script> 
+        $(function () {
+            $("#save").click(save);
+        });
+
+        function save()
+        {
+            var allP = $("p.p1");
+            //console.log(allP);
+            var paragraphs = [];
+            allP.each(function (index, item) {
+                //console.log(index);
+                //console.log(item);
+                var p1 = $(item);
+                var p2 = p1.text();
+                var pos = p1.position();
+                //console.log(p2);
+                //console.log(pos);
+                var pObj = {
+                    text: p2,
+                    x: pos.left,
+                    y: pos.top
+
+                };
+                paragraphs.push(pObj); // we store all the paragraphs in the array with their text and position in json format
+            });
+            console.log(paragraphs);
+            pStr = JSON.stringify(paragraphs);
+            console.log(pStr);
+            localStorage.setItem("page", pStr);
+
+        }
+        
+        </script>
+</head>
+<body>
+    <h1>Experiment 18</h1>
+    <p class="p1" contenteditable="true">Tell me about yourself:</p>
+    <p class="p1" contenteditable="true" >Your Strengths:</p>
+    <p class="p1" contenteditable="true" >Your Weakness:</p>
+    <button id="save">Save</button>
+
+    <br>
+    <hr>
+        <h2>    Documentation
+        </h2>
+        <pre>
+        <p class="p4">
+           
+                 
+    In this experiment, I have used JQueryUI. 
+    What is JQuesryUI?
+    jQuery UI is a curated set of user interface interactions, 
+    effects, widgets, and themes built on top of the jQuery JavaScript Library.
+    Whether you're building highly interactive web applications or you just
+    need to add a date picker to a form control, jQuery UI is the perfect choice.
+    
+    I have stored all the paragraphs matching with a particular class in my local storage
+    after converting them into JSON objects.
+    This can be used when you want cookies like functionalities in your website, 
+    Suppose you access a website but don't have any network coverage, if the user data was 
+    stored in your local storage, having no network connection would not be any issue.
+   
+        </p>
+        </pre>
+    
+    <br>
+    <hr />
+    <h2>Code Snippet</h2>
+    
+        <pre class="p4">
+        &lt;script&gt;
+                     $(function () {
+            $("#save").click(save);
+        });
+        function save()
+        {
+            var allP = $("p.p1");
+            //console.log(allP);
+            var paragraphs = [];
+            allP.each(function (index, item) {
+                //console.log(index);
+                //console.log(item);
+                var p1 = $(item);
+                var p2 = p1.text();
+                var pos = p1.position();
+                //console.log(p2);
+                //console.log(pos);
+                var pObj = {
+                    text: p2,
+                    x: pos.left,
+                    y: pos.top
+                };
+                paragraphs.push(pObj); // we store all the paragraphs in the array with their text and position in json format
+            });
+            console.log(paragraphs);
+            pStr = JSON.stringify(paragraphs);
+            console.log(pStr);
+            localStorage.setItem("page", pStr);
+        }
+        
+        &lt;/script&gt;
+
+    </pre>
+    <hr>
+
+    <h2>Source Code</h2>
+    <a class="p4"  href="../../fileview/Default.aspx?~/experiments/JQueryUI/4.html" target="_blank">View Source</a>
+    <hr />
+    <h2>References Links</h2>
+
+    <a class="p4" href="http://youtu.be/eTUstNknCrw" target="_blank">Youtube link for Jose Annuniziato's leture of JQueryUI</a> <br />
+    <a class="p4" href="http://www.w3schools.com/" target="_blank">W3Schools</a> <br />
+    <a class="p4" href="http://jqueryui.com/" target="_blank">JQueryUI Official Site</a> <br />
+
+
+    <hr />
+
+</body>
+</html>

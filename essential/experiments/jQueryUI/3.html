@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Experiment 18</title>
+    <link rel="stylesheet" href="./css/jquery-ui.css"> 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <script src="./jquery/jquery.js"></script>
+    <script src="./jquery/jquery-ui.js"></script>
+   
+    <style>
+       h1  {
+           color: black;
+           text-align:center;
+           }
+       
+             .p4 {
+            
+         font-family: verdana,sans-serif;
+         font-size: 16px;
+             }
+             .div2{
+                 margin-top:300px;
+                 justify-content:space-around;
+             }
+             body{
+                 background-color:lightgray;
+                 margin-left:15px;
+                 margin-right:15px;
+             }
+      
+    </style>
+    <script> 
+        $(function () {
+            $(document).tooltip();
+        });
+        function submit() {
+            alert("Your response has been recorded and we will get back to you if your fit the opening available");
+        }
+        </script>
+</head>
+<body>
+    <h1>Experiment 18</h1>
+    <form>
+        <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" class="form-control" id="fname" placeholder="eg. Steve, Anna, etc" title="Your first name will be your username">
+        </div>
+        <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" class="form-control" id="lname" placeholder="eg. Jobs, Shah, etc" title="not mandatory">
+        </div>
+        <div class="form-group">
+            <label for="tel">Day time Phone</label>
+            <input type="tel" class="form-control" id="tel" placeholder="x-xxx-xxx-xxxx" title="Enter a proper country code followed by the area code and then the number">
+        </div>
+        <div class="form-group">
+            <label for="email1">Email address</label>
+            <input type="email" class="form-control" id="email1" placeholder="Enter email" title="email id shoud be of the type abc@xyz">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" title="should contain one numeric, alphanumeric and alphabet, maximum of size 10 characters">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputFile">Upload your file explaining the reason you are applying too this job</label>
+            <input type="file" id="exampleInputFile" title="No more than two pages long">
+            <p class="help-block">Please upload a .pdf, .doc files not more that 20Mb</p>
+        </div>
+        <div class="checkbox">
+            <label>
+                Accept terms and conditions <br>
+                <input type="checkbox"> Yes <br>
+                <input type="checkbox"> No
+            </label>
+        </div>
+        <input type="button" class="btn btn-default" onclick="javascript: alert('Your response has been recorded and we will get back to you if your fit the opening available');" value="Submit">
+    </form>
+
+    <br>
+    <hr>
+        <h2>    Documentation
+        </h2>
+        <pre>
+        <p class="p4">
+           
+                 
+    In this experiment, I have used JQueryUI. 
+    What is JQuesryUI?
+    jQuery UI is a curated set of user interface interactions, 
+    effects, widgets, and themes built on top of the jQuery JavaScript Library.
+    Whether you're building highly interactive web applications or you just
+    need to add a date picker to a form control, jQuery UI is the perfect choice.
+    
+    I have used the 'tooltip' widget of JqueryUI.
+    One applies to a job listing by providing his or her details, you can see the functonality of the widget included by hovering 
+    above the form input fields. 
+    I used bootstrap to make my page more spohisticated and a good feel for the page and the form elements 
+    In the java script, I also wrote another function for displaying an alert box on clicking the button.
+    
+   
+        </p>
+        </pre>
+    </div>
+    <br>
+    <hr />
+    <h2>Code Snippet</h2>
+    
+        <pre class="p4">
+        &lt;script&gt;
+        $(function () {
+            $(document).tooltip();
+        });
+        function submit() {
+            alert("Your response has been recorded and we will get back to you if you fit the opening available");
+        }
+        &lt;/script&gt;
+
+    </pre>
+    <hr>
+
+    <h2>Source Code</h2>
+    <a class="p4"  href="../../fileview/Default.aspx?~/experiments/JQueryUI/3.html" target="_blank">View Source</a>
+    <hr />
+    <h2>References Links</h2>
+
+    <a class="p4" href="http://youtu.be/eTUstNknCrw" target="_blank">Youtube link for Jose Annuniziato's leture of JQueryUI</a> <br />
+    <a class="p4" href="http://www.w3schools.com/" target="_blank">W3Schools</a> <br />
+    <a class="p4" href="http://jqueryui.com/" target="_blank">JQueryUI Official Site</a> <br />
+
+
+    <hr />
+
+</body>
+</html>
