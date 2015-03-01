@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Experiment 22</title>
+    <script src="js/angular.min.js" type="text/javascript"></script>
+    <script src="js/angular-route.min.js" type="text/javascript"></script>
+    <script src="js/angular-route.js" type="text/javascript"></script>
+
+    <script src="js/AngularApp3.js"></script>
+    
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./js/bootstrap.js"></script>
+
+    <style>
+        body{
+            margin:15px;
+        }
+
+        h1{
+            text-align:center;
+
+        }
+
+          .p4 {
+
+         font-family: verdana,sans-serif;
+         font-size: 16px;
+
+
+    }
+          .poster{
+              float: left;
+              margin:5px;
+          }
+        </style>
+</head>
+<body ng-app="AngularApp3">
+    
+    <div ng-controller="Controller3" class="container">
+        <h1>Experiment 22</h1>
+        <h2>Search Movies</h2>
+        <div class="input-group">
+            <input type="text" ng-model="searchByTitle" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+                <button ng-click="searchMovies()" class="btn btn-default" type="button">Go!</button>
+            </span>
+        </div>
+
+        <h2>Details</h2>
+        <h3>{{details.title}}</h3>
+
+
+        <h2>Favourite Movies</h2>
+        <table class="table table-striped">
+            <tbody>
+                <tr ng-repeat="movie in favouriteMovies">
+                    <td>{{movie.title}}</td>
+                    <td>{{movie.year}}</td>
+                    <td>{{movie.rating}}</td>
+                    <td>
+                        <img class="poster" ng-src="{{movie.urlPoster}}" width="50" />
+                        {{movie.plot}}
+                    </td>
+                    <td>
+                        <button ng-click="removeFavoriteMovie(movie)" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                        <button ng-click="detailsMovie(movie)" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <table class="table-hover">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Plot</th>
+                    <th>Year</th>
+                    <th>&nbsp;</th>
+                    
+                </tr>
+                <tr>
+                    <th><input ng-model="movie.title" class="form-control" /></th>
+                    <th><input ng-model="movie.plot" class="form-control" /></th>
+                    <th><input ng-model="movie.year" class="form-control" /></th>
+                    <th>
+                        <button ng-click="updateMovie()" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </button>
+                        <button ng-click="addMovie()" class="btn btn-success">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                    </th>
+                </tr>
+                </thead>
+            <tbody>
+                <tr ng-repeat="movie in movies">
+
+                    <td>{{movie.title}}</td>
+                    <td>
+                        <img class="poster" ng-src="{{movie.urlPoster}}" width="50" />
+                        {{movie.plot}}
+                    </td>
+                    
+                    <td>{{movie.year}}</td>
+                    
+                    <td>
+                            <button class="btn btn-warning" ng-click="selectMovie(movie)">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                </button>
+                                    <button class="btn btn-danger" ng-click="removeMovie(movie)">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                        </button>
+                        <button class="btn btn-info" ng-click="addToFavourites(movie)">
+                            <span class="glyphicon glyphicon-star"></span>
+                        </button>
+                        </td>
+
+                </tr>
+                </tbody>
+            </table>
+        
+        </div>
+
+
+    <hr>
+
+    <h2>
+
+        Documentation
+    </h2><pre>
+<p class="p4">
+                 
+    In this experiment, I have developed on the previos experiment 
+    where in I added functionalitites like adding a move to favourites 
+    and then displaying them in the favourites movies section. Also one 
+    can view more details about the movies in the favourites list by clicking 
+    on the details button.
+    Also in this experiment, rather than having a static movies array as in the previous 
+    experiment, I have send a request to the IMDB server dynamically for a list of movies.
+ </p>
+         </pre>
+    <br>
+    <hr />
+    <h2>Errors</h2>
+    <p class="p4">
+
+        Errors:
+        Also I encountered an error "Error: Resource interpreted as Script but transferred with MIME type text/plain"
+
+        There was some problem with the request being made to the IMDB server. So I changed the script type 
+        to text/javascript. But this also did not work. Then I checked the request url and found a syntactical 
+        error there.
+
+    </p>
+
+
+    <hr />
+    <h2>Code Snippet</h2>
+
+    <pre class="p4">
+<p class="p4">
+        $scope.detailsMovie = function (movie) {
+        $http.jsonp("http://www.myapifilms.com/imdb?format=JSONP&idIMDB=" + movie.idIMDB + "&callback=JSON_CALLBACK")
+        .success(function (movie) {
+            $scope.details = movie;
+        });
+    }
+
+        $scope.searchMovies = function () {
+        console.log("sarch");
+        var title = $scope.searchByTitle;
+        $http.jsonp("http://www.myapifilms.com/imdb?title= " + title + "&format=JSONP&aka=0&business=0&seasons=0&seasonYear=0&technical=0&filter=N&exactFilter=0&limit=10&lang=en-us&actors=N&biography=0&trailer=0&uniqueName=0&filmography=0&bornDied=0&starSign=0&actorActress=0&actorTrivia=0&movieTrivia=0&awards=0&moviePhotos=N&movieVideos=N&callback=JSON_CALLBACK")
+        .success(function (response) {
+            console.log(response);
+            $scope.movies = response;
+        })    
+    }
+    $scope.favouriteMovies = [];
+    $scope.removeFavoriteMovie = function(movie)
+    {
+        var index = $scope.favouriteMovies.indexOf(movie);
+        $scope.favouriteMovies.splice(index, 1);
+    }
+   
+    $scope.addToFavourites = function (movie)
+    {
+        $scope.favouriteMovies.push(movie);
+    }
+
+            </pre>
+    </p>
+    <hr>
+
+    <h2>Source Code</h2>
+    <a class="p4" href="../../fileview/Default.aspx?~/experiments/angular/03.html" target="_blank">View Source</a>
+    <hr />
+    <h2>References Links</h2>
+
+    <a class="p4" href="http://youtu.be/Kan1sMNOlIc" target="_blank">Youtube link for Jose Annuniziato's leture of AngularJS Intorduction</a> <br />
+    <a class="p4" href="http://www.w3schools.com/" target="_blank">W3Schools</a> <br />
+    <a class="p4" href="https://angularjs.org" target="_blank">AngularJS Official Site</a> <br />
+
+
+    <hr />
+
+
+    
+</body>
+</html>

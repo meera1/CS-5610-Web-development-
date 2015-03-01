@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Experiment 20</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/FirstAngularApp.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./js/bootstrap.js"></script>
+    <style>
+        body{
+            margin:15px;
+        }
+
+        h1{
+            text-align:center;
+
+        }
+
+          .p4 {
+            
+         font-family: verdana,sans-serif;
+         font-size: 16px;
+         
+       
+    }
+        </style>
+</head>
+<body ng-app="FirstAngularApp">
+    <div ng-controller="FirstAngularApp">
+        <h1>Experiment 20</h1>
+        
+        <input ng-model="hello"/>
+        {{hello}}
+        <br/>
+        {{emp.first}}
+        <br />
+        {{emp.last}}
+        <br />
+        <input ng-model="emp.first">
+        <br />
+        <input ng-model="emp.last">
+
+    </div>
+    <hr>
+
+    <h2>
+
+        Documentation
+    </h2><pre>
+<p class="p4">
+                 
+    In this experiment, I have started a new topic called AngularJS
+
+    What is AngularJS?
+    AngularJS is a JavaScript framework.
+    It can be added to an HTML page with a &lt;script&gt; tag.
+
+    AngularJS works similar to the MVC frammework. It also has a 
+    controller alson with directives, modules and expressions
+
+    Directive: It is a marker on the HTML tag indicating it to reference some java script coode
+    
+    Modules: Every thing works like seperate modules or classes and thus can be resuable 
+
+    Expressions: The AngularJS expressions are specifird in two curly braces, and thus 
+                 on encountering them, it evaluates the content within them and displays the result 
+                 eg. {{3+4}} output would be: 7
+
+
+    So in this experiment, I just got my self aquianted with the new framework and libraries.
+    We have to write two files, on is a javascript file having the AngularJS code and the other 
+    a HTML file having the directives.
+ </p>
+         </pre>
+            <br>
+            <hr />
+    <h2>Errors</h2>
+    <p class="p4">
+
+        Errors:
+        Also I encountered an error "uncaught error: [$injector:modulerr]"
+        Which means that the location of the specified java scripts was not found and 
+        this was caused since I did not put my angularjs file in the js folder, 
+        but after doing so, the error was removed.
+        
+    </p>
+
+
+    <hr/>
+            <h2>Code Snippet</h2>
+
+            <pre class="p4">
+<p class="p4">
+                &lt;script src="js/FirstAngularApp.js"&gt;&lt;/script&gt;  // this is declared in the head of the file to import the angularjs file
+                    &lt;body ng-app="FirstAngularApp"&gt;
+                    &lt;div ng-controller="FirstAngularApp"&gt;
+                    &lt;h1&gt;Experiment 20&lt;/h1&gt;
+        
+                    &lt;input ng-model="hello" /&gt;
+                  {{hello}}
+                
+                  {{emp.first}}
+                
+                  {{emp.last}}
+                
+                    &lt;input ng-model="emp.first"&gt;
+                
+                    &lt;input ng-model="emp.last"&gt;
+                    &lt;/body&gt;
+                   &lt;/div&gt;
+            </pre>
+    </p>
+        <hr>
+
+        <h2>Source Code</h2>
+        <a class="p4" href="../../fileview/Default.aspx?~/experiments/angular/01.html" target="_blank">View Source</a>
+        <hr />
+        <h2>References Links</h2>
+
+    <a class="p4" href="http://youtu.be/KCTKd5ZmXMQ" target="_blank">Youtube link for Jose Annuniziato's leture of AngularJS Intorduction</a> <br />
+        <a class="p4" href="http://www.w3schools.com/" target="_blank">W3Schools</a> <br />
+    <a class="p4" href="https://angularjs.org" target="_blank">AngularJS Official Site</a> <br />
+
+
+        <hr />
+
+    </body>
+    </html>

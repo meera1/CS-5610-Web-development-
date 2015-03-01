@@ -1,0 +1,9 @@
+﻿
+../../story/whatisnext.htm?../experiments/angular/story.txt		       What is Next?
+01.html								                           Basics
+02.html								                           CRUD Operations I 
+03.html								                           CRUD Operations II
+
+
+
+

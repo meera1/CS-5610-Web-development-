@@ -1,0 +1,160 @@
+﻿ <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Experiment 21</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/AngularApp2.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./js/bootstrap.js"></script>
+
+    <style>
+        body{
+            margin:15px;
+        }
+
+        h1{
+            text-align:center;
+
+        }
+
+          .p4 {
+            
+         font-family: verdana,sans-serif;
+         font-size: 16px;
+         
+       
+    }
+        </style>
+</head>
+<body ng-app="AngularApp2">
+    
+    <div ng-controller="Controller2" class="container">
+        <h1>Experiment 21</h1>
+        <table class="table-hover">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Plot</th>
+                    <th>Year</th>
+                    <th>&nbsp;</th>
+                    
+                </tr>
+                <tr>
+                    <th><input ng-model="movie.title" class="form-control" /></th>
+                    <th><input ng-model="movie.plot" class="form-control" /></th>
+                    <th><input ng-model="movie.year" class="form-control" /></th>
+                    <th>
+                        <button ng-click="updateMovie()" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </button>
+                        <button ng-click="addMovie()" class="btn btn-success">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                    </th>
+                </tr>
+                </thead>
+            <tbody>
+                <tr ng-repeat="movie in movies">
+                    <td>{{movie.title}}</td>
+                    <td>{{movie.plot}}</td>
+                    <td>{{movie.year}}</td>
+                    <td>
+                            <button class="btn btn-warning" ng-click="selectMovie(movie)">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                </button>
+                                <button class="btn btn-danger" ng-click="removeMovie(movie)">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                    </button>
+                        </td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    <hr>
+
+    <h2>
+
+        Documentation
+    </h2><pre>
+<p class="p4">
+                 
+    In this experiment, I have used AngularJS to build a movie database.
+    Where one can add new movies, remove movies, select and edit the already existing movies
+    
+    I have written functions for each of the actions.
+ </p>
+         </pre>
+    <br>
+    <hr />
+    <h2>Errors</h2>
+    <p class="p4">
+
+        Also I encountered an error
+        "Error: [ng:areq] http://errors.angularjs.org/1.3.13/ng/areq?p0=Controller2&p1=not%20a%20function%2C%20got%20undefined"
+
+        Which means that there was some syntactical error, but when I searched on google for understanding what it 
+        meant, I found people suggesting some problems with the 'angular.min.js' file but it turned out that 
+        there was only a syntactica error.
+
+    </p>
+
+
+    <hr />
+    <h2>Code Snippet</h2>
+
+    <pre class="p4">
+<p class="p4">
+    $scope.removeMovie = function (movie) {
+    var index = $scope.movies.indexOf(movie);
+    $scope.movies.splice(index, 1);
+    }
+
+    $scope.updateMovie = function () {
+        alert($scope.movie.title);
+    }
+
+    $scope.addMovie = function () {
+        var new_movie = {
+            title: $scope.movie.title,
+            plot: $scope.movie.plot,
+            year: $scope.movie.year
+    }
+    $scope.movies.push(new_movie);
+    }
+
+    $scope.selectMovie = function (movie)
+    {
+        $scope.movie = movie;
+    }
+            </pre>
+    </p>
+    <hr>
+
+    <h2>Source Code</h2>
+    <a class="p4" href="../../fileview/Default.aspx?~/experiments/angular/02.html" target="_blank">View Source</a>
+    <hr />
+    <h2>References Links</h2>
+
+    <a class="p4" href="http://youtu.be/Kan1sMNOlIc" target="_blank">Youtube link for Jose Annuniziato's leture of AngularJS Intorduction</a> <br />
+    <a class="p4" href="http://www.w3schools.com/" target="_blank">W3Schools</a> <br />
+    <a class="p4" href="https://angularjs.org" target="_blank">AngularJS Official Site</a> <br />
+
+
+    <hr />
+
+
+    
+</body>
+</html>
