@@ -3,6 +3,10 @@
 01.html								                           Basics
 02.html								                           CRUD Operations I 
 03.html								                           CRUD Operations II
+04.html														   Angular Routing I
+05.html														   Angular Routing II
+06.html														   Angular Routing III
+
 
 
 

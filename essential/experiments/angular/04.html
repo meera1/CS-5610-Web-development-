@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Experiment 23</title>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-theme.css" rel="stylesheet" />
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/AngularRouting01.js"></script>
+</head>
+<body ng-app="RoutingApp">
+    <h1>Angular Routing</h1>
+    <div class="container">
+        <nav>
+            <a href="#/ron">Ron</a> |
+            <a href="#/hermoine">Hermoine</a> |
+            <a href="#/harry">Harry</a>
+        </nav>
+
+        <div ng-view>
+
+        </div>
+    </div>
+
+    <hr>
+
+    <h2>
+
+        Documentation
+    </h2><pre>
+<p class="p4">
+                 
+    In this experiment, I downloaded the angular-route library for 
+    carrying out the routing process and thus this experiment is based 
+    on routing. It is basic routing wherein I understood the functioning 
+    of routing. Splitting a single page with many functionalities with many pages
+    with each functionality. Thus the main page will request for the other pages 
+    and what the controller will do is load that content in the main page 
+    thus we will remain in the same page even though other pages were requested. 
+    This is the basic idea behind single page applications.
+ </p>
+         </pre>
+    <br>
+    <hr />
+    <h2>Errors</h2>
+    <p class="p4">
+
+        Errors:
+        Also I encountered an error "Error: 404 Not Found"
+        The structure of the files was that I have a folder named 'angular' within it
+        there is a folder 'partials' and within that there were the partial navigation bar 
+        links pages. eg. ron.html So giving the link'partial/ron.html' did not work
+        because in routing we never load another page, the controller fetches all the 
+        contents of that specified page and displays it in the main page controlled by the controller. 
+        Thus the link of the image required by the page under partials folder needs to be in the 
+        'angular' folder
+
+        
+
+    </p>
+
+
+    <hr />
+    <h2>Code Snippet</h2>
+
+    <pre class="p4">
+<p class="p4">
+            app.config(['$routeProvider',  //$routeProvider is the centralized controller that is responsible for handeling the events
+  function($routeProvider) {
+      $routeProvider.
+        when('/ron', {
+            templateUrl: 'partials/ron.html',
+           // controller: 'PhoneListCtrl'
+        }).
+        when('/hermoine', {
+            templateUrl: 'partials/hermoine.html',
+            //controller: 'PhoneDetailCtrl'
+        }).
+          when('/harry', {
+              templateUrl: 'partials/harry.html',
+              // controller: 'PhoneDetailCtrl'
+          }).
+        otherwise({
+            redirectTo: '/harry'
+        });
+  }]);
+            </pre>
+    </p>
+    <hr>
+
+    <h2>Source Code</h2>
+    <a class="p4" href="../../fileview/Default.aspx?~/experiments/angular/04.html" target="_blank">View Source</a>
+    <hr />
+    <h2>References Links</h2>
+
+    <a class="p4" href="http://youtu.be/jelXe-t2MPQ" target="_blank">Youtube link for Jose Annuniziato's leture of AngularJS Routing</a> <br />
+    <a class="p4" href="http://www.w3schools.com/" target="_blank">W3Schools</a> <br />
+    <a class="p4" href="https://angularjs.org" target="_blank">AngularJS Official Site</a> <br />
+
+
+    <hr />
+
+
+</body>
+
+</html>

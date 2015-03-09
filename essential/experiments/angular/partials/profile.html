@@ -1,0 +1,56 @@
+﻿
+<head>
+    <title>Experiment 25</title>
+    <script src="js/angular.min.js" type="text/javascript"></script>
+    <script src="js/angular-route.min.js" type="text/javascript"></script>
+    <script src="js/angular-route.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./js/bootstrap.js"></script>
+
+</head>
+<h1>Profile</h1>
+<h2>My Favourites</h2>
+<div ng-show="favouriteMovies.length > 0">
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Year</th>
+                <th>Rating</th>
+                <th>Plot</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr ng-repeat="movie in favouriteMovies">
+                <td>{{movie.title}}</td>
+                <td>{{movie.year}}</td>
+                <td>{{movie.rating}}</td>
+                <td>
+                    <img class="poster" ng-src="{{movie.urlPoster}}" width="50" />
+                    {{movie.plot}}
+                </td>
+               <!--
+                   <td>
+                    <button ng-click="removeFavoriteMovie(movie)" class="btn btn-danger">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                    <a href="#/details/{{movie.idIMDB}}" class="btn btn-primary">  <!--<a href="#/details/$index" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                </td>
+                --> 
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>

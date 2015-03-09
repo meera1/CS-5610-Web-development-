@@ -15,10 +15,17 @@
 <title>Demo Home Page</title>
 
 <style type="text/css">
-    body {
-    background-color:#ffcccc;
- 
-    }
+  /* html { 
+        font-family: Satisfy, cursive;
+  background: url(meera.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position:top;
+  background-size:1000px;
+} 
+      */
     ul.master_navigation
     {
         font-size: 100%;
@@ -75,11 +82,11 @@
 
 <body>
 
-<div class="pad">
+<div class="pad" >
 
 <form id="form1" runat="server">
 
-<div>
+<div >
 
 <ul class="master_navigation">
     <li><a href="sitestatistics/" target="_blank">SiteStatistics</a></li>
@@ -153,9 +160,9 @@ downstream but it is convenient to have them here at startup.
 
 <hr />
 
-</div>
--->
 
+-->
+</div>
 <p>
 Working on the page yet!...stay tuned for more!!!
 </p>

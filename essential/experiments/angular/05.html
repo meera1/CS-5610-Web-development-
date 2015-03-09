@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    
+    <title>Experiment 24</title>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-theme.css" rel="stylesheet" />
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/AngularRouting02.js"></script>
+</head>
+<body ng-app="MovieApp">
+    <div class="container">
+        <nav>
+            <a href="#/home">Home</a> |
+            <a href="#/profile">Profile</a>
+
+        </nav>
+
+
+        <div ng-view>
+
+        </div>
+    </div>
+    <hr>
+
+    <h2>
+
+        Documentation
+    </h2><pre>
+<p class="p4">
+                 
+    In this experiment, I have used the samae idea of single page applications 
+    without loading several pages. I have built a movies based applications,
+    where I can search for movies and add them to a list of favourites, usign the routing
+    functionality of AngularJS
+ </p>
+         </pre>
+    <br>
+    <hr />
+   
+    <h2>Code Snippet</h2>
+
+    <pre class="p4">
+<p class="p4">
+            app.config(['$routeProvider',  //$routeProvider is the centralized controller that is responsible for handeling the events
+  function ($routeProvider) {
+      $routeProvider.
+        when('/home', {
+            templateUrl: 'partials/home.html',
+             controller: 'HomeCtrl'
+        }).
+        when('/profile', {
+            templateUrl: 'partials/profile.html',
+            //controller: 'PhoneDetailCtrl'
+        }).
+          when('/details', {
+              templateUrl: 'partials/details.html',
+              // controller: 'PhoneDetailCtrl'
+          }).
+        otherwise({
+            redirectTo: '/home'
+        });
+  }]);
+app.controller("HomeCtrl", function ($scope, $http) {
+    $scope.searchMovies = function () {
+        
+        var title = $scope.searchByTitle;
+        $http.jsonp("http://www.myapifilms.com/imdb?title= " + title + "&format=JSONP&aka=0&business=0&seasons=0&seasonYear=0&technical=0&filter=N&exactFilter=0&limit=10&lang=en-us&actors=N&biography=0&trailer=0&uniqueName=0&filmography=0&bornDied=0&starSign=0&actorActress=0&actorTrivia=0&movieTrivia=0&awards=0&moviePhotos=N&movieVideos=N&callback=JSON_CALLBACK")
+        .success(function (response) {
+            
+            $scope.movies = response;
+        })
+    }
+    $scope.removeMovie = function (movie) {
+        var index = $scope.movies.indexOf(movie);
+        $scope.movies.splice(index, 1);
+    }
+            </pre>
+    </p>
+    <hr>
+
+    <h2>Source Code</h2>
+    <a class="p4" href="../../fileview/Default.aspx?~/experiments/angular/05.html" target="_blank">View Source</a>
+    <hr />
+    <h2>References Links</h2>
+
+    <a class="p4" href="http://youtu.be/jelXe-t2MPQ" target="_blank">Youtube link for Jose Annuniziato's leture of AngularJS Routing</a> <br />
+    <a class="p4" href="http://www.w3schools.com/" target="_blank">W3Schools</a> <br />
+    <a class="p4" href="https://angularjs.org" target="_blank">AngularJS Official Site</a> <br />
+
+
+    <hr />
+
+</body>
+</html>
