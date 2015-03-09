@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+
+        <title>Experiment 26</title>
+        <link href="public/css/bootstrap-theme.css" rel="stylesheet" />
+        <link href="public/css/bootstrap.css" rel="stylesheet" />
+        <script src="public/js/angular.js"></script>
+        <script src="public/js/angular-route.js"></script>
+        <style>
+            body{
+                background-image: url(image.jpg);
+                margin:355px;
+                margin-top:50px;
+            } 
+            h2{
+                color: #1a1a1a;
+            } 
+              .p4 {
+            
+         font-family: verdana,sans-serif;
+         font-size: 16px;
+         
+       
+    }
+              a{
+                  color:#0000e6;
+              }
+           
+            
+
+        h1{
+            text-align:center;
+
+        }
+        </style>
+    </head>
+
+<body>
+
+    <h1>Experiment 26: Node Basics</h1>
+    <hr>
+
+
+    <h2>
+
+        Documentation
+    </h2><pre>
+<p class="p4">
+    Kindly check 'serverApp.js' for this experiment which has a link at the bottom of this page    
+    In this experiment, I started NodeJS, learnt the basics of nodejs.
+    Wrote a server app which listens to port 3000 to a particular 
+    url configured in the code and responds accordingly.
+    So the step you need to follow are:
+    - Open the browser
+    - type in the url: http://localhost:3000/bye.html
+    The result you get depends on the different strings you type in which can
+    be found in 'serverApp.js'
+ </p>
+         </pre>
+    <br>
+
+    <hr />
+    <h2>Code Snippet</h2>
+
+<pre class="p4">
+<p class="p4">
+var express = require('express')   //imports
+var app = express() //instance of expresss
+app.get('/', function (req, res) {
+    res.send('Hello World')
+});
+app.get('/bye', function (req, res) {
+    res.send('Good Bye World')
+});
+app.listen(3000)
+
+            </pre>
+    </p>
+    <hr>
+
+    <h2>Source Code</h2>
+    <a class="p4" href="../../fileview/Default.aspx?~/experiments/node5610/01.html" target="_blank">View Source of this page</a><br />
+    <a class="p4" href="../../fileview/Default.aspx?~/experiments/node5610/serverApp.js" target="_blank">View Source of 'serverApp.js'</a>
+    <hr />
+    <h2>References Links</h2>
+    <a class="p4" href="http://youtu.be/Lnd_uSEpCdo" target="_blank">YouTube link for Jose Annuniziato's leture of Introduction to NodeJS & Express</a> <br />
+    <a class="p4" href="http://nodejs.org/" target="_blank">NodeJS Official Site</a> <br />
+
+
+    <hr />
+
+</body>
+</html>
+
+

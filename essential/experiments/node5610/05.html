@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+
+        <title>Experiment 30</title>
+        <link href="public/css/bootstrap-theme.css" rel="stylesheet" />
+        <link href="public/css/bootstrap.css" rel="stylesheet" />
+        <script src="public/js/angular.js"></script>
+        <script src="public/js/angular-route.js"></script>
+        <style>
+            body{
+                background-image: url(image.jpg);
+                margin:355px;
+                margin-top:50px;
+            } 
+            h2{
+                color: #1a1a1a;
+            } 
+              .p4 {
+            
+         font-family: verdana,sans-serif;
+         font-size: 16px;
+         color:black;
+            }
+
+              .a1{
+                  color:blue;
+               }
+           
+               h1{
+            text-align:center;
+
+                }
+
+        </style>
+    </head>
+
+<body>
+
+    <h1>Experiment 30: Web Scraping Part III </h1>
+    <hr>
+
+
+    <h2>
+    Documentation
+    </h2><pre>
+
+<p class="p4">
+    Kindly check 'serverApp5.js' for this experiment which has a link at the bottom of this page    
+    This experiment is developed on the previous Experiment no. 28
+
+    Let's walk through the entire process with examples:
+ </p>
+         </pre>
+    <br>
+
+ 
+    <hr>
+
+    <h2>Code Snippet of the 'cheerio' module example</h2>
+
+<pre class="p4">
+<p class="p4">
+        
+var request = require("request");
+var cheerio = require("cheerio");
+request('https://news.ycombinator.com', function (error, response, html) {
+    if (!error && response.statusCode == 200)  // status code 200 means that the request has been succeeded without an error
+    {
+        var $ = cheerio.load(html);
+        var items = [];  // to store all the items in a array
+        $('span.comhead').each(function (i, element)  // selecting the span tag of the html doc with class as 'comhead' then iterating over them
+        {
+            var a = $(this).prev(); //looking at the DOM, we want the 'a' tag above the abov espan tag extracted, which can be found by 'prev()' 
+            var url = a.attr('href'); // url of the item
+            var title = a.text(); // title of the item
+            var rank = a.parent().parent().children().text();  // path to extract the rank of an item
+            var sub = a.parent().parent().next().children('.subtext').children(); // path to extract the sub items of an item like comments, username and points
+            var points = $(sub).eq(0).text(); // path to extract the points of subitem an item
+            var username = $(sub).eq(1).text(); // path to extract the username of subitem an item
+            var comments = $(sub).eq(3).text(); // path to extract the comments of subitem an item
+            console.log(points);
+             var a = {
+                 url: url,
+                 title: title,
+                 points: parseInt(points),
+                 username: username,
+                 comments: parseInt(comments)
+             };
+             items.push(a);  // adding each item in the items array
+ 
+         });
+         console.log(items); 
+        }
+    
+    });
+
+
+
+            </pre>   
+    </p>
+
+    <h2>Screen shot of the 'cheerio' module example</h2>
+
+<pre class="p4">
+<p class="p4">
+        The output of the cheerio module that was requested and then extracting seperate tag's attributes:
+  
+            </pre>
+    </p>
+
+    <img src="app2 shots/tout2.png" width="1000" height="600"/>
+
+    <hr>
+    <h2>Source Code</h2>
+    <a class="p4 a1" href="../../fileview/Default.aspx?~/experiments/node5610/05.html" target="_blank">View Source of this page</a><br />
+    <a class="p4 a1" href="../../fileview/Default.aspx?~/experiments/node5610/serverApp5.js" target="_blank">View Source of 'serverApp5.js' having the 'cheerio' module code</a><br />
+   
+    <hr />
+    <h2>References Links</h2>
+    <a class="p4 a1" href="http://youtu.be/Lnd_uSEpCdo" target="_blank">YouTube link for Jose Annuniziato's leture of Introduction to NodeJS & Express</a> <br />
+    <a class="p4 a1" href="http://nodejs.org/" target="_blank">NodeJS Official Site</a> <br />
+    <a class="p4 a1" href="http://www.sitepoint.com/web-scraping-in-node-js/" target="_blank">A blog discussing how to use the cheerio module</a>
+
+
+    <hr />
+
+</body>
+</html>
+
+

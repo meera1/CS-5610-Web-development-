@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+
+        <title>Experiment 28</title>
+        <link href="public/css/bootstrap-theme.css" rel="stylesheet" />
+        <link href="public/css/bootstrap.css" rel="stylesheet" />
+        <script src="public/js/angular.js"></script>
+        <script src="public/js/angular-route.js"></script>
+        <style>
+            body{
+                background-image: url(image.jpg);
+                margin:355px;
+                margin-top:50px;
+            } 
+            h2{
+                color: #1a1a1a;
+            } 
+              .p4 {
+            
+         font-family: verdana,sans-serif;
+         font-size: 16px;
+         color:black;
+            }
+
+              .a1{
+                  color:blue;
+               }
+           
+               h1{
+            text-align:center;
+
+                }
+
+        </style>
+    </head>
+
+<body>
+
+    <h1>Experiment 28: Web Scraping Part I </h1>
+    <hr>
+
+
+    <h2>
+    Documentation
+    </h2><pre>
+
+<p class="p4">
+    Kindly check 'serverApp3.js' for this experiment which has a link at the bottom of this page    
+    This experiment contains the beginning process of a web scraper.
+    In this one, we will consider scraping of STATIC PAGES
+    
+
+    Yahoo! Query Language(YQL) is an expressive SQL-like language that lets you query,
+    filter, and join data across Web services. With YQL, apps run faster with fewer 
+    lines of code and a smaller network footprint.
+    node-yql is a YQL client for node.js
+
+    I tried using this code but there was some error in installing the YQL 
+    module, some kind of version issues.
+
+    I then shifted to another module called 'request'
+    module. The simplest way to create HTTP requests in Node.js is by using the request module.
+    Which gets a response from the request generated as a string form of the 
+    html page source code. 
+
+    Now, In order to parse the page, it needs to have a DOM structure, which is lost 
+    since we got back a string.
+
+    For this purpose there are two modules available, cheerio and jsdom
+    I will be using the cheerio module.
+
+    To install cheerio type the following command:
+    npm install cheerio
+
+
+    Let's walk through the entire process with examples:
+ </p>
+         </pre>
+    <br>
+
+    <hr />
+    <h2>Code Snippet of 'request' module</h2>
+
+<pre class="p4">
+<p class="p4">
+    var request = require("request");
+request({
+    uri: "http://www.strongroom.co.za/",
+}, function (error, response, body) {
+    console.log(body);
+});
+
+
+  
+
+  
+            </pre>
+    </p>
+
+<h2>Code Snippet of 'YQL' module that didn't work</h2>
+
+<pre class="p4">
+<p class="p4">
+        
+var YQL = require("yql");
+new YQL.exec('select * from data.html.cssselect where url="http://www.strongroom.co.za/" and css=".post_title a"', function (response) {
+    console.log(body);
+    //response consists of JSON that you can parse
+});
+
+  
+            </pre>
+    </p>
+
+    <h2>Screen shot of the 'request' module example</h2>
+
+<pre class="p4">
+<p class="p4">
+        The output of the request module is the entire web page 
+        that was requested which is printed on the node's console:
+  
+            </pre>
+    </p>
+
+    <img src="app2 shots/extracted1.png"/>
+    
+    <hr>
+
+    <h2>Code Snippet of the 'cheerio' module example</h2>
+
+<pre class="p4">
+<p class="p4">
+        
+    
+var cheerio = require("cheerio");
+var html = "&lt;ul&gt;&lt;li&gt;foo&lt;/li&gt;&lt;li&gt;bar&lt;/li&gt;&lt;/ul&gt;"; // holds the HTML fragment to be parsed. The HTML is parsed using cheerio
+var $ = cheerio.load(html);  // result is assigned to the $ variable
+var list = $("ul"); // selects the &lt;ul&gt; element using CSS style selectors
+console.log(list.html()); // the list’s inner HTML is printed using the html() method
+
+
+
+
+            </pre>   
+    </p>
+
+    <h2>Screen shot of the 'cheerio' module example</h2>
+
+<pre class="p4">
+<p class="p4">
+        The output of the cheerio module is the entire web page 
+        that was requested which is printed on the node's console:
+  
+            </pre>
+    </p>
+
+    <img src="app2 shots/extracted2.png" width="1000" height="600"/>
+
+    <hr>
+    <h2>Source Code</h2>
+    <a class="p4 a1" href="../../fileview/Default.aspx?~/experiments/node5610/03.html" target="_blank">View Source of this page</a><br />
+    <a class="p4 a1" href="../../fileview/Default.aspx?~/experiments/node5610/serverApp3a.js" target="_blank">View Source of 'serverApp3a.js' having the 'request' module code</a><br />
+    <a class="p4 a1" href="../../fileview/Default.aspx?~/experiments/node5610/serverApp3b.js" target="_blank">View Source of 'serverApp3b.js' having the 'cheerio' module code</a>
+    <a class="p4 a1" href="http://www.sitepoint.com/web-scraping-in-node-js/" target="_blank">A blog discussing how to use the cheerio module</a>
+
+
+    
+    <hr />
+    <h2>References Links</h2>
+    <a class="p4 a1" href="http://youtu.be/Lnd_uSEpCdo" target="_blank">YouTube link for Jose Annuniziato's leture of Introduction to NodeJS & Express</a> <br />
+    <a class="p4 a1" href="http://nodejs.org/" target="_blank">NodeJS Official Site</a> <br />
+
+
+    <hr />
+
+</body>
+</html>
+
+
