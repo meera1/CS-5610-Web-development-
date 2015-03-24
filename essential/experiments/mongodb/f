@@ -1,0 +1,206 @@
+[33mcommit 113c44c4ad785974170c83d9a1fd0c650c42a1df[m
+Author: Template builder <builder@example.com>
+Date:   Sat Mar 21 21:23:38 2015 -0400
+
+    Creating template
+
+[1mdiff --git a/.openshift/README.md b/.openshift/README.md[m
+[1mnew file mode 100644[m
+[1mindex 0000000..7ec66d7[m
+[1m--- /dev/null[m
+[1m+++ b/.openshift/README.md[m
+[36m@@ -0,0 +1,3 @@[m
+[32m+[m[32mFor information about .openshift directory, consult the documentation:[m
+[32m+[m
+[32m+[m[32mhttp://openshift.github.io/documentation/oo_user_guide.html#the-openshift-directory[m
+[1mdiff --git a/.openshift/action_hooks/README.md b/.openshift/action_hooks/README.md[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5413195[m
+[1m--- /dev/null[m
+[1m+++ b/.openshift/action_hooks/README.md[m
+[36m@@ -0,0 +1,3 @@[m
+[32m+[m[32mFor information about action hooks, consult the documentation:[m
+[32m+[m
+[32m+[m[32mhttp://openshift.github.io/documentation/oo_user_guide.html#action-hooks[m
+[1mdiff --git a/.openshift/cron/README.cron b/.openshift/cron/README.cron[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ac77f78[m
+[1m--- /dev/null[m
+[1m+++ b/.openshift/cron/README.cron[m
+[36m@@ -0,0 +1,27 @@[m
+[32m+[m[32mRun scripts or jobs on a periodic basis[m
+[32m+[m[32m=======================================[m
+[32m+[m[32mAny scripts or jobs added to the minutely, hourly, daily, weekly or monthly[m
+[32m+[m[32mdirectories will be run on a scheduled basis (frequency is as indicated by the[m
+[32m+[m[32mname of the directory) using run-parts.[m
+[32m+[m
+[32m+[m[32mrun-parts ignores any files that are hidden or dotfiles (.*) or backup[m
+[32m+[m[32mfiles (*~ or *,)  or named *.{rpmsave,rpmorig,rpmnew,swp,cfsaved}[m
+[32m+[m
+[32m+[m[32mThe presence of two specially named files jobs.deny and jobs.allow controls[m
+[32m+[m[32mhow run-parts executes your scripts/jobs.[m
+[32m+[m[32m   jobs.deny  ===> Prevents specific scripts or jobs from being executed.[m
+[32m+[m[32m   jobs.allow ===> Only execute the named scripts or jobs (all other/non-named[m
+[32m+[m[32m                   scripts that exist in this directory are ignored).[m
+[32m+[m
+[32m+[m[32mThe principles of jobs.deny and jobs.allow are the same as those of cron.deny[m
+[32m+[m[32mand cron.allow and are described in detail at:[m[41m [m
+[32m+[m[32m   http://docs.redhat.com/docs/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/ch-Automating_System_Tasks.html#s2-autotasks-cron-access[m
+[32m+[m
+[32m+[m[32mSee: man crontab or above link for more details and see the the weekly/[m
+[32m+[m[32m     directory for an example.[m
+[32m+[m
+[32m+[m[32mPLEASE NOTE: The Cron cartridge must be installed in order to run the configured jobs.[m
+[32m+[m
+[32m+[m[32mFor more information about cron, consult the documentation:[m
+[32m+[m[32mhttp://openshift.github.io/documentation/oo_cartridge_guide.html#cron[m
+[32m+[m[32mhttp://openshift.github.io/documentation/oo_user_guide.html#cron[m
+[1mdiff --git a/.openshift/cron/daily/.gitignore b/.openshift/cron/daily/.gitignore[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/.openshift/cron/hourly/.gitignore b/.openshift/cron/hourly/.gitignore[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/.openshift/cron/minutely/.gitignore b/.openshift/cron/minutely/.gitignore[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/.openshift/cron/monthly/.gitignore b/.openshift/cron/monthly/.gitignore[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/.openshift/cron/weekly/README b/.openshift/cron/weekly/README[m
+[1mnew file mode 100644[m
+[1mindex 0000000..7c3e659[m
+[1m--- /dev/null[m
+[1m+++ b/.openshift/cron/weekly/README[m
+[36m@@ -0,0 +1,16 @@[m
+[32m+[m[32mRun scripts or jobs on a weekly basis[m
+[32m+[m[32m=====================================[m
+[32m+[m[32mAny scripts or jobs added to this directory will be run on a scheduled basis[m
+[32m+[m[32m(weekly) using run-parts.[m
+[32m+[m
+[32m+[m[32mrun-parts ignores any files that are hidden or dotfiles (.*) or backup[m
+[32m+[m[32mfiles (*~ or *,)  or named *.{rpmsave,rpmorig,rpmnew,swp,cfsaved} and handles[m
+[32m+[m[32mthe files named jobs.deny and jobs.allow specially.[m
+[32m+[m
+[32m+[m[32mIn this specific example, the chronograph script is the only script or job file[m
+[32m+[m[32mexecuted on a weekly basis (due to white-listing it in jobs.allow). And the[m
+[32m+[m[32mREADME and chrono.dat file are ignored either as a result of being black-listed[m
+[32m+[m[32min jobs.deny or because they are NOT white-listed in the jobs.allow file.[m
+[32m+[m
+[32m+[m[32mFor more details, please see ../README.cron file.[m
+[32m+[m
+[1mdiff --git a/.openshift/cron/weekly/chrono.dat b/.openshift/cron/weekly/chrono.dat[m
+[1mnew file mode 100644[m
+[1mindex 0000000..fc4abb8[m
+[1m--- /dev/null[m
+[1m+++ b/.openshift/cron/weekly/chrono.dat[m
+[36m@@ -0,0 +1 @@[m
+[32m+[m[32mTime And Relative D...n In Execution (Open)Shift![m
+[1mdiff --git a/.openshift/cron/weekly/chronograph b/.openshift/cron/weekly/chronograph[m
+[1mnew file mode 100755[m
+[1mindex 0000000..61de949[m
+[1m--- /dev/null[m
+[1m+++ b/.openshift/cron/weekly/chronograph[m
+[36m@@ -0,0 +1,3 @@[m
+[32m+[m[32m#!/bin/bash[m
+[32m+[m
+[32m+[m[32mecho "`date`: `cat $(dirname \"$0\")/chrono.dat`"[m
+[1mdiff --git a/.openshift/cron/weekly/jobs.allow b/.openshift/cron/weekly/jobs.allow[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8d32abc[m
+[1m--- /dev/null[m
+[1m+++ b/.openshift/cron/weekly/jobs.allow[m
+[36m@@ -0,0 +1,12 @@[m
+[32m+[m[32m#[m
+[32m+[m[32m#  Script or job files listed in here (one entry per line) will be[m
+[32m+[m[32m#  executed on a weekly-basis.[m
+[32m+[m[32m#[m
+[32m+[m[32m#  Example: The chronograph script will be executed weekly but the README[m[41m [m
+[32m+[m[32m#           and chrono.dat files in this directory will be ignored.[m
+[32m+[m[32m#[m
+[32m+[m[32m#           The README file is actually ignored due to the entry in the[m
+[32m+[m[32m#           jobs.deny which is checked before jobs.allow (this file).[m
+[32m+[m[32m#[m
+[32m+[m[32mchronograph[m
+[32m+[m
+[1mdiff --git a/.openshift/cron/weekly/jobs.deny b/.openshift/cron/weekly/jobs.deny[m
+[1mnew file mode 100644[m
+[1mindex 0000000..73c9450[m
+[1m--- /dev/null[m
+[1m+++ b/.openshift/cron/weekly/jobs.deny[m
+[36m@@ -0,0 +1,7 @@[m
+[32m+[m[32m#[m
+[32m+[m[32m#  Any script or job files listed in here (one entry per line) will NOT be[m
+[32m+[m[32m#  executed (read as ignored by run-parts).[m
+[32m+[m[32m#[m
+[32m+[m
+[32m+[m[32mREADME[m
+[32m+[m
+[1mdiff --git a/.openshift/markers/README.md b/.openshift/markers/README.md[m
+[1mnew file mode 100644[m
+[1mindex 0000000..45814da[m
+[1m--- /dev/null[m
+[1m+++ b/.openshift/markers/README.md[m
+[36m@@ -0,0 +1,3 @@[m
+[32m+[m[32mFor information about markers, consult the documentation:[m
+[32m+[m
+[32m+[m[32mhttp://openshift.github.io/documentation/oo_user_guide.html#markers[m
+[1mdiff --git a/README.md b/README.md[m
+[1mnew file mode 100644[m
+[1mindex 0000000..0be974d[m
+[1m--- /dev/null[m
+[1m+++ b/README.md[m
+[36m@@ -0,0 +1,3 @@[m
+[32m+[m[32mThe OpenShift `nodejs` cartridge documentation can be found at:[m
+[32m+[m
+[32m+[m[32mhttp://openshift.github.io/documentation/oo_cartridge_guide.html#nodejs[m
+[1mdiff --git a/deplist.txt b/deplist.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c6dc5df[m
+[1m--- /dev/null[m
+[1m+++ b/deplist.txt[m
+[36m@@ -0,0 +1,13 @@[m
+[32m+[m[32m#[m
+[32m+[m[32m#  ***************************************************************************[m
+[32m+[m[32m#[m
+[32m+[m[32m#    Note: This file has been deprecated and exists for backward compatibility.[m
+[32m+[m[32m#          Please use package.json to add dependencies to the Node modules[m
+[32m+[m[32m#          your application requires.[m
+[32m+[m[32m#[m
+[32m+[m[32m#  ***************************************************************************[m
+[32m+[m[32m#[m
+[32m+[m
+[32m+[m[32m#[m
+[32m+[m[32m#  For a list of globally installed modules - see file: npm_global_module_list.[m
+[32m+[m[32m#[m
+[1mdiff --git a/index.html b/index.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a95f491[m
+[1m--- /dev/null[m
+[1m+++ b/index.html[m
+[36m@@ -0,0 +1,270 @@[m
+[32m+[m[32m<!doctype html>[m
+[32m+[m[32m<html lang="en">[m
+[32m+[m[32m<head>[m
+[32m+[m[32m  <meta charset="utf-8">[m
+[32m+[m[32m  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">[m
+[32m+[m[32m  <title>Welcome to OpenShift</title>[m
+[32m+[m
+[32m+[m[32m<style>[m
+[32m+[m
+[32m+[m[32m/*![m
+[32m+[m[32m * Bootstrap v3.0.0[m
+[32m+[m[32m *[m
+[32m+[m[32m * Copyright 2013 Twitter, Inc[m
+[32m+[m[32m * Licensed under the Apache License v2.0[m
+[32m+[m[32m * http://www.apache.org/licenses/LICENSE-2.0[m
+[32m+[m[32m *[m
+[32m+[m[32m * Designed and built with all the love in the world @twitter by @mdo and @fat.[m
+[32m+[m[32m */[m
+[32m+[m
+[32m+[m[32m  .logo {[m
+[32m+[m[32m    background-size: cover;[m
+[32m+[m[32m    height: 58px;[m
+[32m+[m[32m    width: 180px;[m
+[32m+[m[32m    margin-top: 6px;[m
+[32m+[m[32m    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNC4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDQzMzYzKSAgLS0+DQo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTgwcHgiDQoJIGhlaWdodD0iNThweCIgdmlld0JveD0iLTEyNy4zOTEgNDMyLjAxOSAxODAgNTgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgLTEyNy4zOTEgNDMyLjAxOSAxODAgNTgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGcgaWQ9IkxheWVyXzEiIGRpc3BsYXk9Im5vbmUiPg0KCTxnIGRpc3BsYXk9ImlubGluZSI+DQoJCTxwYXRoIGQ9Ik0tMTIxLjM4NSw0MzguNzQ5Yy0wLjQxNiwwLjM2MS0xLjAwNiwwLjU0MS0xLjc3MSwwLjU0MWgtMi43NzR2LTdoMi44NzRjMC42MTIsMCwxLjA5OSwwLjE1NSwxLjQ2MiwwLjQ2NA0KCQkJYzAuMzYyLDAuMzEsMC41NDQsMC43NiwwLjU0NCwxLjM1M2MwLDAuMzU5LTAuMDg0LDAuNjUxLTAuMjUzLDAuODc0Yy0wLjE2OCwwLjIyMy0wLjM3OCwwLjM5OC0wLjYyOSwwLjUyNA0KCQkJYzAuMTM5LDAuMDQsMC4yNzgsMC4xMDIsMC40MTcsMC4xODVzMC4yNjUsMC4xOTIsMC4zNzcsMC4zMjZjMC4xMTIsMC4xMzMsMC4yMDQsMC4yOTMsMC4yNzMsMC40OHMwLjEwNCwwLjQwMSwwLjEwNCwwLjY0MQ0KCQkJQy0xMjAuNzYxLDQzNy44NTItMTIwLjk2OSw0MzguMzg5LTEyMS4zODUsNDM4Ljc0OXogTS0xMjIuMzEyLDQzMy41MTRjLTAuMTQ2LTAuMTc2LTAuMzk2LTAuMjY0LTAuNzUtMC4yNjRoLTEuODh2MS44aDEuODgNCgkJCWMwLjE3MywwLDAuMzIyLTAuMDI0LDAuNDQ1LTAuMDc0YzAuMTIzLTAuMDUsMC4yMjMtMC4xMTYsMC4zLTAuMTk5YzAuMDc3LTAuMDgzLDAuMTMzLTAuMTc3LDAuMTctMC4yODNzMC4wNTUtMC4yMTUsMC4wNTUtMC4zMjgNCgkJCUMtMTIyLjA5MSw0MzMuOTA2LTEyMi4xNjUsNDMzLjY4OS0xMjIuMzEyLDQzMy41MTR6IE0tMTIyLjEyMSw0MzYuMzJjLTAuMjE0LTAuMjA3LTAuNTItMC4zMS0wLjkyLTAuMzFoLTEuOXYyLjMyaDEuODcNCgkJCWMwLjQ2NiwwLDAuNzk1LTAuMTA2LDAuOTg1LTAuMzJzMC4yODUtMC40OTQsMC4yODUtMC44NEMtMTIxLjgwMSw0MzYuODEtMTIxLjkwOCw0MzYuNTI3LTEyMi4xMjEsNDM2LjMyeiIvPg0KCQk8cGF0aCBkPSJNLTExNi4yODEsNDM5LjI5di0wLjUwNmMtMC4xMzQsMC4xOTUtMC4zMTgsMC4zNDctMC41NTUsMC40NTVzLTAuNDkyLDAuMTYyLTAuNzY1LDAuMTYyYy0wLjYxMywwLTEuMDc4LTAuMTk2LTEuMzk1LTAuNTkNCgkJCWMtMC4zMTYtMC4zOTMtMC40NzUtMC45OC0wLjQ3NS0xLjc2di0zLjAxaDEuMDR2Mi45NjNjMCwwLjUzMiwwLjA5NSwwLjkwNSwwLjI4NCwxLjExN2MwLjE4OSwwLjIxMywwLjQ1MywwLjMxOSwwLjc5MiwwLjMxOQ0KCQkJYzAuMzQ1LDAsMC42MS0wLjExNiwwLjc5Ni0wLjM0OWMwLjE4Ni0wLjIzMywwLjI3OS0wLjU2MiwwLjI3OS0wLjk4OHYtMy4wNjNoMS4wNHY1LjI1SC0xMTYuMjgxeiIvPg0KCQk8cGF0aCBkPSJNLTExMi42OTcsNDMzLjE2NWMtMC4xMywwLjEzLTAuMjg1LDAuMTk1LTAuNDY1LDAuMTk1Yy0wLjE4NywwLTAuMzQ1LTAuMDY1LTAuNDc1LTAuMTk1cy0wLjE5NS0wLjI4NS0wLjE5NS0wLjQ2NQ0KCQkJYzAtMC4xODcsMC4wNjUtMC4zNDUsMC4xOTUtMC40NzVzMC4yODgtMC4xOTUsMC40NzUtMC4xOTVjMC4xOCwwLDAuMzM1LDAuMDY1LDAuNDY1LDAuMTk1czAuMTk1LDAuMjg5LDAuMTk1LDAuNDc1DQoJCQlDLTExMi41MDEsNDMyLjg4LTExMi41NjcsNDMzLjAzNS0xMTIuNjk3LDQzMy4xNjV6IE0tMTEzLjY4Miw0MzkuMjl2LTUuMjVoMS4wNHY1LjI1SC0xMTMuNjgyeiIvPg
