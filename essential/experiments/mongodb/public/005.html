@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Experiment 35</title>
+    <link href="public/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="public/css/bootstrap.css" rel="stylesheet" />
+    <script src="public/js/angular.js"></script>
+    <script src="public/js/angular-route.js"></script>
+    <style>
+        body {
+            background-image: url('images/back16.png');
+            margin: 355px;
+            margin-top: 50px;
+        }
+
+        h2 {
+            color: #1a1a1a;
+            
+            
+        }
+
+        .p4 {
+            font-family: verdana,sans-serif;
+            font-size: 16px;
+            color: black;
+            
+        }
+
+        .a1 {
+            color: #0000ff;
+        }
+
+        h1 {
+            text-align: center;
+            
+        }
+        
+    </style>
+
+</head>
+<body>
+    <h1>Experiment 35: MongoDB: Using Angular application to add data into database</h1>
+    <h2>
+        Documentation
+    </h2><pre>
+<p class="p4">
+    Kindly check 'server.js' for this experiment which has a link at the bottom of this page. 
+    I have worked on the previous experiment and built this one. 
+    In this experiment, I used Angular application such that it acts as the middleware controller 
+    that generates a http request to the server which is 'server.js' in this case and displayes 
+    it, i.e. 'index 2.html' 
+    In the previous experiment we ddeleted data from the Db. In this one we will be able to
+    add new ones to the Db as well.
+ </p>
+         </pre>
+    <br>
+    <hr>
+
+    <h2>Current data in the Db:</h2>
+    <img src="images/18.png" />
+
+    <h2>Output on the console after adding a new record:</h2>
+    <img src="images/19.png" />
+    <pre>
+<p class="p4">
+    In the above image, when the user enters a new website to be inserted 
+    in the Db, a request is generatted by the angular app to the server 
+    which parses it and performs the '.save()' function to save that record. 
+    The server then responds the new updated table back to the abgular app 
+    and it is rendered in the front end
+ </p>
+         </pre>
+    <h2>Code Snippet: app.js</h2>
+    <img src="images/20.png" />
+
+
+    <hr>
+    <h2>Code Snippet: server.js</h2>
+    <img src="images/21.png" />
+
+
+
+
+    <h2>Source Code</h2>
+    <a class="p4 a1" href="../../fileview/Default.aspx?~/experiments/mongodb/public/005.html" target="_blank">View Source of this page</a><br />
+    <a class="p4 a1" href="../../fileview/Default.aspx?~/experiments/mongodb/public/server.js" target="_blank">View Source of 'server.js'</a><br />
+    <a class="p4 a1" href="http://mongodb-meera.rhcloud.com/" target="_blank">OpenShift Link</a><br />
+
+    <hr />
+    <h2>References Links</h2>
+    <a class="p4 a1" href="https://youtu.be/YH5sFprHgl0" target="_blank">YouTube link for Jose Annuniziato's leture of MongoDB and Mongoose</a> <br />
+    <a class="p4 a1" href="http://mongodb.org/" target="_blank">MongoDB Official Site</a> <br />
+   
+
+    <hr />
+
+</body>
+</html>
+

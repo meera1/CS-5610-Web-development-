@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Experiment 34</title>
+    <link href="public/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="public/css/bootstrap.css" rel="stylesheet" />
+    <script src="public/js/angular.js"></script>
+    <script src="public/js/angular-route.js"></script>
+    <style>
+        body {
+            background-image: url('images/back16.png');
+            margin: 355px;
+            margin-top: 50px;
+        }
+
+        h2 {
+            color: #1a1a1a;
+            
+            
+        }
+
+        .p4 {
+            font-family: verdana,sans-serif;
+            font-size: 16px;
+            color: black;
+            
+        }
+
+        .a1 {
+            color: #0000ff;
+        }
+
+        h1 {
+            text-align: center;
+            
+        }
+        
+    </style>
+
+</head>
+<body>
+    <h1>Experiment 34: MongoDB: Using Angular application to delete data from the form table in database</h1>
+    <h2>
+        Documentation
+    </h2><pre>
+<p class="p4">
+    Kindly check 'server4.js' for this experiment which has a link at the bottom of this page. 
+    I have worked on the previous experiment and built this one. 
+    In this experiment, I used Angular application such that it acts as the middleware controller 
+    that generates a http request to the server which is 'server4.js' in this case and displayes 
+    it on the from end, i.e. 'index.html' 
+    In the previous experiment we displayed the form data. In this one we will be able to
+    delete the form data from the fron end as well.
+ </p>
+         </pre>
+    <br>
+    <hr>
+
+    <h2>Deleting form data and then displaying data in front end:</h2>
+    <img src="images/14.png" />
+
+    <h2>Output on the console:</h2>
+    <img src="images/16.png" />
+    <pre>
+<p class="p4">
+   In the above image, the output from the console tells that
+   it deleted the record, by displaying 'null' for the error
+   message and 1 for the count, i.e. number of records affected.
+ </p>
+         </pre>
+    <h2>Code Snippet: app.js</h2>
+    <img src="images/15.png" />
+
+
+    <hr>
+   
+
+
+    <h2>Source Code</h2>
+    <a class="p4 a1" href="../../fileview/Default.aspx?~/experiments/mongodb/004.html" target="_blank">View Source of this page</a><br />
+    <a class="p4 a1" href="../../fileview/Default.aspx?~/experiments/mongodb/server4.js" target="_blank">View Source of 'server4.js'</a><br />
+    <a class="p4 a1" href="http://mongodb-meera.rhcloud.com/" target="_blank">OpenShift Link</a><br />
+
+    <hr />
+    <h2>References Links</h2>
+    <a class="p4 a1" href="https://youtu.be/YH5sFprHgl0" target="_blank">YouTube link for Jose Annuniziato's leture of MongoDB and Mongoose</a> <br />
+    <a class="p4 a1" href="http://mongodb.org/" target="_blank">MongoDB Official Site</a> <br />
+   
+
+    <hr />
+
+</body>
+</html>
+
