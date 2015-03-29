@@ -1,10 +1,10 @@
 ﻿
-../../story/whatisnext.htm?../experiments/node5610/story.txt		       What is Next?
-01.html								                           Basics
-02.html								                           Accessing data from MongoDB in JSON format
-03.html								                           Render data using AngularJS
-04.html								                           Deleting data using AngularJS
-05.html								                           Adding data using AngularJS
+../../story/whatisnext.htm?../experiments/mongodb/story.txt		       What is Next?
+public/001.html													   Basics
+public/002.html								                           Accessing data from MongoDB in JSON format
+public/003.html								                           Render data using AngularJS
+public/004.html								                           Deleting data using AngularJS
+public/005.html								                           Adding data using AngularJS
 
 
 
