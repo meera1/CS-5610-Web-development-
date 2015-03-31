@@ -117,6 +117,8 @@ Blogs:
 
 <asp:Label ID="BlogEntryURL" runat="server"
     Text="../blog_entries" Visible="false">
+
+   
 </asp:Label>
 
 </form>
