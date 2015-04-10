@@ -1,0 +1,14 @@
+﻿
+../../story/whatisnext.htm?../experiments/scraping/story.txt		       What is Next?
+home exp.html																Home Page Experiment
+scrape1.html													   			Web Scraping using AngularJS and NodeJS
+scrape2.html								                           		Web Scraping using AngularJS and NodeJS and Displaying in Tabular Form
+scrape3.html								                                Web Scraping using AngularJS and NodeJS and Displaying in Tabular Form with Buttons for Selection
+scrape4.html								                           		Web Scraping using AngularJS and NodeJS and Displaying in Tabular Form with Buttons for Selection and Removal
+scrape5.html								                           		Web Scraping using MEAN stack (Storing data in MongoDB)
+
+
+
+
+
+
