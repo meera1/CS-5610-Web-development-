@@ -8,7 +8,9 @@
 ../story/index.htm?../experiments/JQueryUI/story.txt                          JQueryUI
 ../story/index.htm?../experiments/angular/story.txt                           AngularJS
 ../story/index.htm?../experiments/node5610/story.txt                          NodeJS
-../story/index.htm?../experiments/mongodb/story.txt                          MongoDB
+../story/index.htm?../experiments/mongodb/story.txt                           MongoDB
+../story/index.htm?../experiments/scraping/story.txt                          Web Scraping Project functionality and Home Page
+
 
 
 
