@@ -21,7 +21,7 @@
 <body>
 <main id="cd-main-content">
 	<section id="cd-intro">
-		<h1>Full Page Intro &amp; Navigation</h1>
+		<!--<h1>Full Page Intro &amp; Navigation</h1>-->
 
 		<header class="cd-header">
 			<div id="cd-logo"><a href="#0"><img src="homepage/img/cd-logo.svg" alt="Logo"></a></div>
