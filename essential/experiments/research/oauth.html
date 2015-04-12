@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Experiment 48</title>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-theme.css" rel="stylesheet" />
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-image: url("/experiments/scraping/images/back17.jpg");
+            margin: initial;
+            margin-left: 200px;
+            margin-right: 100px;
+            margin-top: 100px;
+            align-content: center;
+        }
+
+        pre{
+            font-size:14px;
+        }
+        h1 {
+            text-align: center;
+        }
+
+        .p4 {
+            font-family: verdana,sans-serif;
+            font-size: 16px;
+            color: black;
+        }
+
+
+        .a1 {
+            color: #0000ff;
+        }
+
+
+        img {
+            border: groove;
+            border-image-width:3px;
+            
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Experiment 49: OAuth</h1>
+    <h2>
+        Documentation
+    </h2>
+   
+<div class="p4 well">
+    
+    In this experiment we will learn some basics about OAuth. 
+    <h3>
+        What is OAuth?
+    </h3>
+    <p> <pre>The idea behind OAuth is to provide a standard way for accessing to protected resources, 
+             without the need of sharing passwords. You can do this by the use of tokens and one dosen't 
+             need to share his/her credentials all the time</pre></p>
+    <h3>
+        OAuth history
+    </h3>
+    <p>
+        <pre>OAuth was first designed as a protocol, to be interoperable and super easy to implement 
+            for the developers. However, there are 30+ different implementations co-existing.</pre>
+    </p>
+    <h3>
+        OAuth Working
+    </h3>
+    <p>
+       <pre>
+            <b><u>Resource Owner:</u></b> the user who wants to share a resource, e.g. owner of the facebook photos.
+            <b><u>Client:</u></b> the application that wants to leverage a resource hosted by a third party, e.g. the photo printing website.
+            <b><u>Authorization Server:</u></b> the entity that decides to grant access to the client (application), e.g. Facebook’s authorization server.
+            <b><u>Resource Server:</u></b> the place where the third party resource is hosted, e.g. Facebook’s server where the photos to print are.</pre>
+    </p>
+    <img src="/experiments/scraping/images/oauth.png"/>
+
+    <h3>
+        Conclusion
+    </h3>
+    <p>
+        <pre>We learnt what OAuth is and also learnt the working of it which is mandatory since OAuth is very complicated</pre>
+    </p>
+ </div>
+         <h2>
+             Source Code
+         </h2>
+    <div class="well">
+        <a class="p4 a1" href="../../fileview/Default.aspx?~/experiments/research/oauth.html" target="_blank">View Source</a>
+
+    </div>
+    <h2>
+        Reference Links
+    </h2>
+    <div class="well">
+        <a class="p4 a1" href="http://blog.oauth.io/oauth-tutorial" target="_blank">OAuth Tutorial</a> <br />
+
+    </div>
+    <br>
+    <hr>
+
+
+</body>
+</html>

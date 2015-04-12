@@ -1,0 +1,7 @@
+﻿
+../../story/whatisnext.htm?../experiments/json/story.txt		       What is Next?
+json1.html																Basic JSON objects
+
+
+
+

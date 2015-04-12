@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Experiment 47</title>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-theme.css" rel="stylesheet" />
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app7.js"></script>
+    <style>
+        body {
+            background-image:url("/experiments/scraping/images/back17.jpg");
+            margin: initial;
+            margin-left: 200px;
+            margin-right: 100px;
+            margin-top: 100px;
+            align-content: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .p4, p {
+            font-family: verdana,sans-serif;
+            font-size: 16px;
+            color: black;
+        }
+
+        .p5{
+            text-align: center;
+        }
+
+
+        .a1 {
+            color: #0000ff;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        img {
+            border: groove;
+        }
+    </style>
+</head>
+<body>
+    <h1>Experiment 47: JSON </h1>
+
+    <div class="well">
+        <p class="p5" id="demo" onclick="displayJson();">Click here to see more!!!</p>
+
+    </div>
+   
+    <script>
+        function displayJson() {
+            var text = '{"name":"Meera Udani","street":"75 Saint Alphonsus St","phone":"1234567890"}'
+
+            var obj = JSON.parse(text);
+
+            document.getElementById("demo").innerHTML =
+            obj.name + "<br>" +
+            obj.street + "<br>" +
+            obj.phone;
+        }
+    </script>
+
+    <h2>
+        Documentation
+    </h2>
+    <pre>
+<p class="p4">
+    
+    In this experiment we will learn about JSON.
+    I will need this since I am working with the 
+    MEAN stack which works on communicating only with
+    JSON objects. So learning more on JSON would be really helpful
+
+    JSON: JavaScript Object Notation.
+    JSON is a syntax for storing and exchanging data.
+    JSON is an easier-to-use alternative to XML.
+ </p>
+         </pre>
+    <br>
+    <hr>
+
+    <h2>Code Snippet</h2>
+
+    <pre class="p4">
+        <p class="p4">
+    Below you can see the script that handles the onclick event on the paragraph tag in the body,
+    Once it is cliked, you can see the json object as defined in the script
+    -------------------------------------------------------------------------------------------------------------------
+    
+        <b><u>The HTML code:</u></b>
+            
+                
+             &lt;p class="p5" id="demo" onclick="displayJson();"&gt;Click here to see more!!!&lt;p&gt;
+
+
+    -------------------------------------------------------------------------------------------------------------------
+     
+        <b><u>The Script:</u></b>
+
+            &lt;script&gt;
+            function displayJson() {
+                var text = '{"name":"Meera Udani","street":"75 Saint Alphonsus St","phone":"1234567890"}'
+
+                var obj = JSON.parse(text);
+
+                document.getElementById("demo").innerHTML =
+                obj.name + "&lt;br&gt;" +
+                obj.street + "&lt;br&gt;" +
+                obj.phone;
+            }
+                &lt;/script&gt;
+            </pre>
+    </p>
+    <hr>
+
+    <h2>Source Code</h2>
+    <a class="p4" href="../../fileview/Default.aspx?~/experiments/json/json1.html" target="_blank">View Source</a>
+    <hr />
+    <h2>References Links</h2>
+
+    <a class="p4" href="http://www.w3schools.com/" target="_blank">W3Schools</a> <br />
+   
+
+    <hr />
+
+
+    
+</body>
+</html>

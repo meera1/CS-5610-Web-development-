@@ -1,0 +1,7 @@
+﻿
+../../story/whatisnext.htm?../experiments/ajax/story.txt		       What is Next?
+ajax1.html															   Display data on request
+
+
+
+

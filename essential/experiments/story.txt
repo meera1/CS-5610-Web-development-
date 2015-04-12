@@ -10,6 +10,12 @@
 ../story/index.htm?../experiments/node5610/story.txt                          NodeJS
 ../story/index.htm?../experiments/mongodb/story.txt                           MongoDB
 ../story/index.htm?../experiments/scraping/story.txt                          Web Scraping Project functionality and Home Page
+../story/index.htm?../experiments/svg/story.txt                               Basic experiment SVG
+../story/index.htm?../experiments/json/story.txt                              Basic JSON experiments
+../story/index.htm?../experiments/ajax/story.txt                              Basic AJAX experiments
+../story/index.htm?../experiments/research/story.txt                          OAuth and Github Research
+
+
 
 
 

@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Experiment 46</title>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-theme.css" rel="stylesheet" />
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/svg11.js"></script>
+    <script src="js/svg12.js"></script>
+
+    <style>
+        body {
+            background-image: url("/experiments/scraping/images/back17.jpg");
+            margin: initial;
+            margin-left: 200px;
+            margin-right: 100px;
+            margin-top: 100px;
+            align-content: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .p4 {
+            font-family: verdana,sans-serif;
+            font-size: 16px;
+            color: black;
+        }
+
+
+        .a1 {
+            color: #0000ff;
+        }
+
+        
+        img {
+            border: groove;
+        }
+    </style>
+    <link href="Exp5c.css" rel="stylesheet" />
+    <script src="http://maps.googleapis.com/maps/api/js">
+    </script>
+
+    <script>
+        function initialize() {
+            var mapProp = {
+                center: new google.maps.LatLng(42.3600825, -71.0588801),
+                zoom: 9,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var mapProp2 = {
+                center: new google.maps.LatLng(42.3600825, -71.0588801),
+                zoom: 9,
+                mapTypeId: google.maps.MapTypeId.SATELLITE
+            };
+            var mapProp3 = {
+                center: new google.maps.LatLng(42.3600825, -71.0588801),
+                zoom: 9,
+                mapTypeId: google.maps.MapTypeId.HYBRID
+            };
+            var mapProp4 = {
+                center: new google.maps.LatLng(42.3600825, -71.0588801),
+                zoom: 9,
+                mapTypeId: google.maps.MapTypeId.TERRAIN
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+            var map2 = new google.maps.Map(document.getElementById("googleMap2"), mapProp2);
+            var map3 = new google.maps.Map(document.getElementById("googleMap3"), mapProp3);
+
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Experiment 46:Google Maps </h1>
+
+       
+        <div id="googleMap" style="width:600px;height:400px;margin:0 auto" ></div>
+        <br>
+        <div id="googleMap2" style="width:600px;height:400px;margin:0 auto"></div>
+        <br>
+        <div id="googleMap3" style="width:600px;height:400px;margin:0 auto"></div>
+        <br>
+        <hr />
+
+        <h2>
+            Documentation
+        </h2>
+        <pre>
+        <p class="p4">
+    
+          In this experiment we will learn about google maps. We will
+          use SVG (Scalable Vector Graphic) Google Maps allows one to 
+          display maps on a web page. In order to do so we will use
+          the google maps api which allows us to customize the maps 
+          and the information on them. 
+          The map can also be zoomed at one's convenience 
+     
+           </p>
+             </pre>
+        <br>
+        <hr>
+
+
+
+        <hr />
+        <h2>Source Code</h2>
+        <a class="p4 a1" href="../../../fileview/Default.aspx?~/experiments/svg/svg1" target="_blank">View Source of this page</a><br />
+        
+        <hr />
+        <h2>References Links</h2>
+        <a class="p4 a1" href="http://www.w3schools.com/googleapi/" target="_blank">Google API Tutorial</a> <br />
+
+
+    </div>
+
+
+</body>
+</html>

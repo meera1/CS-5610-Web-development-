@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Experiment 48</title>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-theme.css" rel="stylesheet" />
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+ 
+    <script>
+function loadXMLDoc()
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","ajax_info.txt",true);
+xmlhttp.send();
+}
+    </script>
+    <style>
+        body {
+            background-image: url("/experiments/scraping/images/back17.jpg");
+            margin: initial;
+            margin-left: 200px;
+            margin-right: 100px;
+            margin-top: 100px;
+            align-content: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .p4 {
+            font-family: verdana,sans-serif;
+            font-size: 16px;
+            color: black;
+        }
+
+
+        .a1 {
+            color: #0000ff;
+        }
+
+
+        img {
+            border: groove;
+        }
+    </style>
+
+
+</head>
+<body>
+    <h1>Experiment 48: Basic AJAX text change</h1>
+    <div class="well">
+        <div class="p4" id="myDiv"><h2>Let AJAX change this text</h2></div>
+        <button type="button" onclick="loadXMLDoc()">Change Content</button>
+
+    </div>
+    <h2>
+        Documentation
+    </h2>
+    <pre>
+<p class="p4">
+    
+    In this experiment we learn about AJAX.
+    AJAX = Asynchronous JavaScript and XML.
+    AJAX is not a new programming language, but a new way to use existing standards.
+    AJAX is the art of exchanging data with a server, and updating parts of a web page - without reloading the whole page.
+ </p>
+         </pre>
+    <br>
+    <hr>
+
+    <h2>Code Snippet</h2>
+
+    <pre class="p4">
+    <p class="p4">
+    Below you can see the script that handles the onclick event on the paragraph tag in the body,
+    Once it is cliked, you can see the change in the content being displayed
+    -------------------------------------------------------------------------------------------------------------------
+    
+    <b><u>The HTML code:</u></b>
+            
+            &lt;div class="p4" id="myDiv"&gt;&lt;h2&gt;let ajax change this text&lt;h2&gt;&lt;/div&gt;
+            &lt;button type="button" onclick="loadXMLDoc()">Change Content&lt;/button&gt;
+  
+            
+    -------------------------------------------------------------------------------------------------------------------
+     
+    <b><u>The Script:</u></b>
+            &lt;script&gt;
+                function loadXMLDoc()
+                {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                  {// code for IE7+, Firefox, Chrome, Opera, Safari
+                  xmlhttp=new XMLHttpRequest();
+                  }
+                else
+                  {// code for IE6, IE5
+                  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }
+                xmlhttp.onreadystatechange=function()
+                  {
+                  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                    {
+                    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+                    }
+                  }
+                xmlhttp.open("GET","ajax_info.txt",true);
+                xmlhttp.send();
+                }
+                &lt;/script&gt;
+            </pre>
+    </p>
+    <hr>
+
+    <h2>Source Code</h2>
+    <a class="p4 a1" href="../../fileview/Default.aspx?~/experiments/ajax/ajax1.html" target="_blank">View Source</a><br />
+    <a class="p4 a1" href="../../fileview/Default.aspx?~/experiments/ajax/ajax_info.txt" target="_blank">View the text file from where the AJAX pulls data</a>
+
+    <hr />
+    <h2>References Links</h2>
+
+    <a class="p4 a1" href="http://www.w3schools.com/" target="_blank">W3Schools</a> <br />
+
+
+    <hr />
+
+</body>
+</html>
