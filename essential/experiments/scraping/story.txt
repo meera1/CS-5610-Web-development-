@@ -6,6 +6,11 @@ scrape2.html								                           		Web Scraping using AngularJS an
 scrape3.html								                                Web Scraping using AngularJS and NodeJS and Displaying in Tabular Form with Buttons for Selection
 scrape4.html								                           		Web Scraping using AngularJS and NodeJS and Displaying in Tabular Form with Buttons for Selection and Removal
 scrape5.html								                           		Web Scraping using MEAN stack (Storing data in MongoDB)
+scrape6.html								                           		Web Scraping Web Scraping by providing options to the users to scrape
+scrape7.html								                           		Web Scraping the data the user requests: paragraph tags
+scrape8.html								                           		Web Scraping the data the user requests: div tags
+scrape9.html								                           		Web Scraping the data the user requests: both the paragraphs and div tags
+scrape10.html								                           		Web Scraping: Redirecting the user using angular routing
 
 
 
