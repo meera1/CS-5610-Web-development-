@@ -1,7 +1,7 @@
 ﻿
 ../../story/whatisnext.htm?../experiments/research/story.txt		       What is Next?
 oauth.html																What is OAuth
-github.html																How to use GitHub the best way
+github.html																How to use GitHub
 
 
 

@@ -16,17 +16,32 @@
 	<link rel="stylesheet" href="homepage/css/style.css"> <!-- Resource style -->
 	<script src="homepage/js/modernizr.js"></script> <!-- Modernizr -->
   	
+
 	<title>Home Page</title>
+    <style>
+        .topcorner{
+   position:absolute;
+   top:0;
+   right:0;
+  }
+    </style>
+
+    <script type="text/javascript">var switchTo5x = true;</script>
+<script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript" src="https://ss.sharethis.com/loader.js"></script>
+
 </head>
 <body>
 <main id="cd-main-content">
 	<section id="cd-intro">
 		<!--<h1>Full Page Intro &amp; Navigation</h1>-->
-
+        <h1><a class="topcorner" href="#mee">Something About Me<span></span></a></h1>
 		<header class="cd-header">
-			<div id="cd-logo"><a href="#0"><img src="homepage/img/cd-logo.svg" alt="Logo"></a></div>
+			<!--<div id="cd-logo"><a href="#0"><img src="homepage/img/cd-logo.svg" alt="Logo"></a></div>-->
 			<a class="cd-menu-trigger" href="#main-nav">Menu<span></span></a>
+            
 		</header>
+
 		<div class="cd-blurred-bg"></div>
 	</section> <!-- cd-intro -->
 </main>
@@ -55,5 +70,14 @@ Experiments		</a></li>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="homepage/js/main.js"></script> <!-- Resource jQuery -->
+
+<script type="text/javascript">
+    stLight.options({ publisher: "0a19ed1e-c1f1-411d-8149-8569a613b551", doNotHash: false, doNotCopy: false, hashAddressBar: false });
+
+</script>
+<script>
+ var options = { "publisher": "0a19ed1e-c1f1-411d-8149-8569a613b551", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0 }, "chicklets": { "items": ["facebook", "twitter", "linkedin", "pinterest", "googleplus", "email", "sharethis"] } };
+ var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+</script>
 </body>
 </html>
