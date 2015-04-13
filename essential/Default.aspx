@@ -15,15 +15,11 @@
 	<link rel="stylesheet" href="homepage/css/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="homepage/css/style.css"> <!-- Resource style -->
 	<script src="homepage/js/modernizr.js"></script> <!-- Modernizr -->
-  	
+  	<link href="homepage/css/normalize.css" rel="stylesheet" />
 
 	<title>Home Page</title>
     <style>
-        .topcorner{
-   position:absolute;
-   top:0;
-   right:0;
-  }
+     
     </style>
 
     <script type="text/javascript">var switchTo5x = true;</script>
@@ -35,7 +31,7 @@
 <main id="cd-main-content">
 	<section id="cd-intro">
 		<!--<h1>Full Page Intro &amp; Navigation</h1>-->
-        <h1><a class="topcorner" href="#mee">Something About Me<span></span></a></h1>
+        <h1><a class="topcorner" href="mee.html">Something About Me...<span></span></a></h1>
 		<header class="cd-header">
 			<!--<div id="cd-logo"><a href="#0"><img src="homepage/img/cd-logo.svg" alt="Logo"></a></div>-->
 			<a class="cd-menu-trigger" href="#main-nav">Menu<span></span></a>
@@ -45,6 +41,8 @@
 		<div class="cd-blurred-bg"></div>
 	</section> <!-- cd-intro -->
 </main>
+
+
 
 <div class="cd-shadow-layer"></div>
 
@@ -61,6 +59,7 @@
     <li><a href="images/autoimage.aspx" target="_blank">Images</a></li>
     <li><a href="blog/" target="_blank">Blog</a></li>
     <li><a href="story/index.htm?../experiments/story.txt" target="_blank">
+
 Experiments		</a></li>
     <li><a href="https://github.com/meera1/v4.0/" target="_blank">GitHub</a></li>
     
