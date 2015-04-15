@@ -17,7 +17,7 @@ app.use(session({
    // resave: true,
   //  saveUninitialized: true
 })); // encrypted, sign the session id with this given string only if u have this string u can use it; paswd for session id 
-app.use(cookieParser);  // parse cookie and create a map we can use 
+app.use(cookieParser());  // parse cookie and create a map we can use 
 app.use(passport.initialize());
 app.use(passport.session()); // U NEED TO CONFIGURE PASSPORT'S SESSION AFTER U CONFIGURE EXPRESSES SESSION. THIS ORDER IS VERY IMP
 
@@ -40,7 +40,7 @@ passport.use(new LocalStrategy(
 
         for(var u in users)
         {
-            if(username == users[u].uesrname && password == users[u].password)
+            if(username == users[u].username && password == users[u].password)
             {
                 return done(null, users[u]);
             }

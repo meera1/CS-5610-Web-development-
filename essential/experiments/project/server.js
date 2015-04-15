@@ -1,32 +1,115 @@
 ﻿var express = require('express');
+
 var app = express();
 var bodyParser = require('body-parser');
 var multer = require('multer');
-//var passport = require('passport');
-//var LocalStrategy = require('passport-local').Strategy;
-//var cookieParser = require('cookie-parser');
-//var session = require('express-session');
+var mongoose = require('mongoose');
+var db = mongoose.connect('mongodb://localhost/practice1');
+// db.UserSchema.drop
+
+
 var cheerio = require("cheerio");
 var request = require("request");
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/practice1');
 
+
+
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+var cookieParser = require('cookie-parser')
+var session = require('express-session');
+
+
+// to configure :
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(multer()); // for parsing multipart/form-data
-//app.use(session({
-  //  secret: 'this is the secret'
+
+
+
+
+app.use(session({ secret: 'this is the secret' }));
     // resave: true,
     //  saveUninitialized: true
 //})); // encrypted, sign the session id with this given string only if u have this string u can use it; paswd for session id 
-//app.use(cookieParser);  // parse cookie and create a map we can use 
-//app.use(passport.initialize());
-//app.use(passport.session()); // U NEED TO CONFIGURE PASSPORT'S SESSION AFTER U CONFIGURE EXPRESSES SESSION. THIS ORDER IS VERY IMP
+app.use(cookieParser());  // parse cookie and create a map we can use 
+app.use(passport.initialize());
+app.use(passport.session()); // U NEED TO CONFIGURE PASSPORT'S SESSION AFTER U CONFIGURE EXPRESSES SESSION. THIS ORDER IS VERY IMP
 
 app.use(express.static(__dirname + '/public'));
 
+//-------------------------------------------
+
+var UserSchema = new mongoose.Schema({
+    username: String,
+    password: String,
+    first: String,
+    last: String,
+    email: String
+
+});
+
+
+var UserModel = mongoose.model("UserModel", UserSchema);
+
+
+var alice = new UserModel({
+
+    username: 'alice',
+    password: 'alice',
+    first: 'Alice',
+    last: 'Wonderland',
+    email: 'alice@wonderland.com'
+});
+
+
+alice.save();
+
+
+//-------------------------------------------
+
+
+
+
+
+
 var name; // name given by the user to that url
+
+
+
+
+var users =
+    [{ username: 'alice', password: 'alice', firstName: 'Alice', lastName: 'Wonderland', roles: ['admin', 'teacher'] },
+    { username: 'charlie', password: 'charlie', firstName: 'Charlie', lastName: 'Wonderland', roles: ['teacher'] },
+    { username: 'meera', password: 'meera', firstName: 'Meera', lastName: 'Udani', roles: ['student'] }
+
+
+    ];
+
+
+//------------------------------------------------------
+
+var auth = function (req, res, next) {
+
+    if (!req.isAuthenticated()) {
+        res.send(401);
+       
+    }
+
+    else
+        next();
+};
+
+
+
+//------------------------------------------------------
+
+
+app.get('/loggedin', function (req, res) {
+    res.send(req.isAuthenticated() ? req.user : '0'); 
+
+});
+
 
 app.post('/api/scrap', function (req, res) {
     //console.log(" started");
@@ -87,59 +170,11 @@ app.post('/api/scrap', function (req, res) {
                     parsedResults.push(jsonData);
                 });
         }
-            /*
-        {
-            $('p').each(function () {
-
-                var data = $(this).text();
-
-                //console.log(data);
-                var jsonData = {
-
-                    dataUrl: link,
-                    tagData: data
-                };
-
-
-
-                parsedResults.push(jsonData);
-            });
-
-
-            $('div').each(function () {
-
-                var data = $(this).text();
-
-                //console.log(data);
-                var jsonData = {
-
-                    dataUrl: link,
-                    tagData: data
-                };
-
-
-
-                parsedResults.push(jsonData);
-            });
-        }
-        */
-
-        
-      
-
-        //console.log(parsedResults);
+           
         res.send(parsedResults);
-        //var html = html; //holds the HTML fragment to be parsed. The HTML is parsed using cheerio
-        //var $ = cheerio.load(html);  // result is assigned to the $ variable
-        //var list = $("p"); // selects the <p> element using CSS style selectors
-
-
-        //console.log($);
-        //console.log(list.html()); // the list’s inner HTML is printed using the html() method
+       
     });
 
-    //res.json(parsedResults);
-    //return parsedResults;
 });
 
 
@@ -159,7 +194,7 @@ var UserDataSchema = new mongoose.Schema({
 var UserData = mongoose.model("UserData", UserDataSchema);
 
 
-app.post('/api/save', function (req, res) {
+app.post('/api/save', auth, function (req, res) {
     //console.log(req.body.d);
     
     var d1 = new UserData({ userName: 'Meera' , savedData: req.body.d });
@@ -182,7 +217,43 @@ app.post('/api/save', function (req, res) {
 
 
 
-app.post('/api/userdata', function (req, res) {
+passport.use(new LocalStrategy(
+    function (username, password, done) {
+
+        for (var u in users) {
+            if (username == users[u].username && password == users[u].password) {
+                return done(null, users[u]);
+            }
+
+        }
+        return done(null, false, { message: 'Unable to login' });
+    }
+        ));
+
+
+passport.serializeUser(function (user, done) {  // to encrypt
+    done(null, user);
+
+});
+
+passport.deserializeUser(function (user, done) {  // to decrypt
+    done(null, user);
+
+});
+
+
+
+
+app.post('/login', passport.authenticate('local'),  function (req, res) {
+
+    var user = req.body;
+    console.log("cookies:  " + req.cookies);
+    res.json(user);
+});
+
+
+
+app.post('/api/userdata', auth, function (req, res) {
     //console.log(req.body.d);
     console.log("in server userdata")
     var userdata = UserData.find({ userName: 'ABC' }, 'savedData.dataUrl', function(err, docs){
@@ -195,6 +266,12 @@ app.post('/api/userdata', function (req, res) {
 });
 
 
+
+app.post('/logout', function (req, res) {
+
+    req.logout();
+    res.send(200);
+});
 
 
 

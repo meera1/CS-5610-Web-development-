@@ -2,30 +2,52 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>main</title>
+    <style>
+        .h22{
+            //text-align:center;
+            font-size:20px;
+            font-weight:bold;
+}
+        .white-font{
+            color:white;
+        }
+        .mytable{
+            background-color:rgba(0, 0, 0,0.5);
+            font-size:20px;
+            
+        }
+        .mypara{
+            padding-left:25px;
+        }
+        .mydropdown{
+            font-size: 15px;
+        }
+    </style>
 </head>
 <body>
-    <table class="table table-hover">
+    <table class="table mytable">
         <thead>
             <tr>
                 <th>
-                    URL Name
+                    <h2 class="h22 white-font">URL Name</h2>
+                    
                 </th>
                 <th>
-                    URL
+                    <h2 class="h22 white-font">URL</h2>
                 </th>
-                <th>
-                    Your Choice Please
+                <th colspan="2">
+                    <h2 class="h22">Your Choice Please</h2>
                 </th>
             </tr>
             <tr>
                 <th>
-                    <input type="text" class="form-control linkName" placeholder="You'd like to call it..." ng-model=" url.linkname" id="linkName" />
+                    <input type="text" class="form-control linkName btn-lg" placeholder="You'd like to call it..." ng-model=" url.linkname" id="linkName" />
                 </th>
                 <th>
-                    <input id="link1" type="url" class="form-control link1" placeholder="Search for..." ng-model=" url.link1">
+                    <input id="link1" type="url" class="form-control link1 btn-lg" placeholder="Search for..." ng-model=" url.link1">
                 </th>
                 <th>
-                    <select ng-model="url.choice" required class="form-control">
+                    <select ng-model="url.choice" required class="form-control btn-lg ">
                         <option value="p">The P elements</option>
                         <option value="div">The Div elements</option>
                         <option value="both">Both P and Div elements</option>
@@ -33,24 +55,24 @@
                     </select>
                 </th>
                 <th>
-                    <input type="submit" class="btn btn-primary pull-right" id="url-submit" ng-click="urlSubmit(url)">
+                    <input type="submit" class="btn btn-primary btn-lg pull-right" id="url-submit" ng-click="urlSubmit(url)">
                 </th>
 
             </tr>
             <tr ng-show="scrap.length > 0">
-                <th colspan="3">
-                    <h2>{{url.choice}}'s Data </h2>
+                <th colspan="4">
+                    <h2>{{choice}}'s Data </h2>
                 </th>
             </tr>
 
         </thead>
         <tbody>
-            <tr ng-repeat="s in scrap">
+            <tr ng-repeat="s in scrap" >
                 <!--To add the particular para of the scraped data in the db-->
-                <td colspan="2">
-                    {{s.tagData}}
+                <td colspan="3" width="98%">
+                    <p class="mypara">{{s.tagData}}</p>
                 </td>
-                <td>
+                <td width="2%">
                     <button class="btn btn-success" ng-click="addData(s)">
                         <span class="glyphicon glyphicon-ok"></span>
                     </button>
@@ -74,7 +96,7 @@
     </table>
 
 
-    <table class="table table-hover">
+    <table class="table mytable">
         <thead>
             <tr ng-show="datum.length > 0">
                 <th>
@@ -95,8 +117,8 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="3">
-                    <button class="btn btn-warning pull-left btn-block" ng-show="datum.length > 0" ng-click="savePicks()">Save My Picks</button>
+                <td colspan="3" ng-show="datum.length > 0">
+                    <button class="btn btn-warning pull-left btn-block btn-lg" ng-click="savePicks()">Save My Picks</button>
 
                 </td>
             </tr>
