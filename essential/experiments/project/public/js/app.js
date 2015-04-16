@@ -157,7 +157,14 @@ app.controller("RegisterController", function ($scope, $http, $location, $rootSc
         if (user.password == user.password2)
         {
 
-            $http.get('/check', { user: user}).success(function (user) {
+            $http.post('/check', {
+                username: user.username,
+                password: user.password,
+                first: user.first,
+                last: user.last,
+                email: user.email
+            })
+                .success(function (user) {
 
                 $http.post("/register", user)
                 .success(function (res) {
@@ -165,7 +172,7 @@ app.controller("RegisterController", function ($scope, $http, $location, $rootSc
                     $rootScope.currentUser = res;
                     $location.url('/profile');
                     })
-             .error(function (res) {
+                .error(function (res) {
                  console.log("failure response of check" + res);
                  $window.alert("Your are already logged in");
                  $location.url('/login');
@@ -366,6 +373,7 @@ app.controller("ScrapingController", function ($scope, $http, $location, $window
 
     $scope.urlSubmit = function (url) {
         //var link1 = $scope.link1;
+        console.log("i m here " + $scope.url.linkName);
         console.log("from app the link name and it's url   " + $scope.url.linkName + "  " + $scope.url.link1);
         console.log("choice of user  " + $scope.url.choice);
         var ch = $scope.url.choice;
