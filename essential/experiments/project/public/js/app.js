@@ -19,7 +19,10 @@ function ($routeProvider) {
     }).
     when('/userdata', {
         templateUrl: 'views/user/userdata.html',
-        controller: 'UserDataController'
+        controller: 'UserDataController',
+        resolve: {
+            loggedin: checkLoggedIn,
+        }
     }).
     when('/clearall', {
         templateUrl: 'views/clear/clearall.html',
@@ -44,9 +47,13 @@ function ($routeProvider) {
         templateUrl: 'views/login/login.html',
         controller: 'ScrapingController'
     }).
+    when('/register', {
+        templateUrl: 'views/register/register.html',
+        controller: 'RegisterController'
+    }).
     when('/logout', {
-        templateUrl: 'views/user/profile.html',
-        //controller:
+        templateUrl: 'views/user/home.html',
+        controller: 'NavController'
     });
         /* .
     otherwise({
@@ -99,16 +106,6 @@ var checkLoggedIn = function ($q, $timeout, $http, $location, $rootScope, $windo
 };
 
 
-
-
-
-
-
-
-
-
-
-
 //----------------------------------------------------------------------------------------------/// checkLoggedIn function End----------------------
 
 
@@ -140,15 +137,72 @@ app.controller("ClearController", function ($scope, $http, $location) {
 
 
 
-
-
-
-
-
-
-
-
 //----------------------------------------------------------------------------------------------/// ClearController End----------------------
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//----------------------------------------------------------------------------------------------/// RegisterController Start----------------------
+
+
+app.controller("RegisterController", function ($scope, $http, $location, $rootScope, $window) {
+
+   
+
+    $scope.register = function (user) {
+        console.log("in app first step   "+user);
+        if (user.password == user.password2)
+        {
+
+            $http.get('/check', { user: user}).success(function (user) {
+
+                $http.post("/register", user)
+                .success(function (res) {
+                    console.log(" success response of check the new user" + res);
+                    $rootScope.currentUser = res;
+                    $location.url('/profile');
+                    })
+             .error(function (res) {
+                 console.log("failure response of check" + res);
+                 $window.alert("Your are already logged in");
+                 $location.url('/login');
+                 
+
+
+                 
+             //      if (user != '0') {
+             //          $rootScope.currentUser = user;
+             //          deferred.resolve();
+             //      }
+             //    // User is not authenticated
+             //else {
+             //       $rootScope.errorMessage = 'You Need To Log In Please';
+             //    deferred.reject();
+             //    $location.url('/login');
+
+             //}
+                
+             });
+
+         });
+
+        }
+        else
+        {
+            $window.alert("Passwords Don't Match");
+        }
+       
+    };
+
+});
+
+
+
+
+//----------------------------------------------------------------------------------------------/// RegisterController End----------------------
 
 
 
@@ -159,7 +213,6 @@ app.controller("ClearController", function ($scope, $http, $location) {
 
 
 
-//----------------------------------------------------------------------------------------------/// ProfileController Start----------------------
 
 
 
@@ -213,6 +266,7 @@ app.controller("NavController", function ($scope, $http, $location) {
         });
 
     };
+
 
     
 

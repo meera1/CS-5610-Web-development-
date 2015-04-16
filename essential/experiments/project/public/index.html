@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
    
-    <title>scrape main</title>
+    <title>Index</title>
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/bootstrap-theme.css" rel="stylesheet" />
     <link href="css/index.css" rel="stylesheet" />
@@ -35,10 +35,11 @@
 
             <ul class="nav nav-justified navbar-inverse btn-lg" ng-controller="NavController">
                 <li role="presentation" class="active"><a href="#home">Home</a></li>
-                <li role="presentation"><a href="#profile">Profile</a></li>
                 <li role="presentation"><a href="#login">Login</a></li>
+                <li role="presentation"><a href="#register" ng-click="register(user)">Register</a></li>
+                <li role="presentation"><a href="#profile">Profile</a></li>
                 <li role="presentation"><a href="#logout" ng-click="logout()">Logout</a></li>
-
+                
             </ul>
 
 
